@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Progress - ShieldWise</title>
+
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+<script src="../js/app.js"></script>
+<script src="../js/theme.js"></script>
+<!-- ================= MOBILE HEADER ================= -->
+
+<div class="mobile-header">
+
+    <div class="mobile-brand">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>ShieldWise</span>
+    </div>
+
+    <button onclick="toggleSidebar()" class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</div>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>ShieldWise</h2>
+            <span>Online Safety</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Detection</span>
+        </a>
+
+        <a href="scams.html">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html" class="active">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            <i class="fa-solid fa-book"></i>
+            <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Help</span>
+        </a>
+
+        <a href="contact.html">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+            <i class="fa-solid fa-moon"></i>
+            <span>Theme</span>
+        </button>
+
+        <button onclick="logout()" class="sidebar-action logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="dashboard-main">
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+            <h1>My Progress 📊</h1>
+            <p>Track your online safety learning journey.</p>
+        </div>
+
+        <div class="user-info">
+
+            <div class="user-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+                <strong id="userName">User</strong>
+                <small>Safety Learner</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= WELCOME ================= -->
+
+    <section class="progress-welcome">
+
+        <div>
+
+            <span class="section-label">
+                <i class="fa-solid fa-shield-halved"></i>
+                Your Safety Journey
+            </span>
+
+            <h2>Keep building your digital safety skills!</h2>
+
+            <p>
+                Complete quizzes, learn about scams and follow the safety
+                checklist to become a smarter and safer internet user.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OVERALL PROGRESS ================= -->
+
+    <section class="overall-progress-card">
+
+        <div class="progress-ring" id="progressRing">
+
+            <div class="progress-ring-inner">
+
+                <strong id="overallPercentage">0%</strong>
+
+                <span>Overall</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="overall-info">
+
+            <span class="section-label">
+                <i class="fa-solid fa-chart-simple"></i>
+                Overall Progress
+            </span>
+
+            <h2 id="progressTitle">
+                Getting Started
+            </h2>
+
+            <p id="progressDescription">
+                Start learning to improve your online safety.
+            </p>
+
+
+            <div class="level-badge" id="levelBadge">
+                <i class="fa-solid fa-seedling"></i>
+                Beginner
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STAT CARDS ================= -->
+
+    <section class="progress-stats-grid">
+
+        <!-- SCAMS -->
+
+        <div class="progress-stat-card">
+
+            <div class="progress-stat-icon blue">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div>
+
+                <span>Scams Learned</span>
+
+                <strong id="scamsLearned">0/8</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUIZ -->
+
+        <div class="progress-stat-card">
+
+            <div class="progress-stat-icon purple">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+
+            <div>
+
+                <span>Quiz Score</span>
+
+                <strong id="quizScore">0/10</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHECKLIST -->
+
+        <div class="progress-stat-card">
+
+            <div class="progress-stat-icon green">
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+
+            <div>
+
+                <span>Checklist</span>
+
+                <strong id="checklistScore">0/8</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- LEVEL -->
+
+        <div class="progress-stat-card">
+
+            <div class="progress-stat-icon orange">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <div>
+
+                <span>Safety Level</span>
+
+                <strong id="safetyLevel">Beginner</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LEARNING PROGRESS ================= -->
+
+    <section class="learning-progress-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    Learning Areas
+                </span>
+
+                <h2>Your Learning Progress</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCAM LIBRARY -->
+
+        <div class="learning-progress-card">
+
+            <div class="learning-progress-header">
+
+                <div class="learning-title">
+
+                    <div class="learning-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Scam Awareness</h3>
+                        <p>Learn different types of online scams.</p>
+                    </div>
+
+                </div>
+
+                <strong id="scamPercent">0%</strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="scamProgress"
+                    style="width: 0%;">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUIZ -->
+
+        <div class="learning-progress-card">
+
+            <div class="learning-progress-header">
+
+                <div class="learning-title">
+
+                    <div class="learning-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <h3>Safety Quiz</h3>
+                        <p>Test your knowledge about online safety.</p>
+                    </div>
+
+                </div>
+
+                <strong id="quizPercent">0%</strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="quizProgress"
+                    style="width: 0%;">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHECKLIST -->
+
+        <div class="learning-progress-card">
+
+            <div class="learning-progress-header">
+
+                <div class="learning-title">
+
+                    <div class="learning-icon">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+
+                    <div>
+                        <h3>Safety Checklist</h3>
+                        <p>Complete important digital safety practices.</p>
+                    </div>
+
+                </div>
+
+                <strong id="checklistPercent">0%</strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="checklistProgress"
+                    style="width: 0%;">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section class="achievements-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    <i class="fa-solid fa-award"></i>
+                    Achievements
+                </span>
+
+                <h2>Your Safety Achievements</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="achievements-grid" id="achievementsGrid"></div>
+
+    </section>
+
+
+    <!-- ================= SAFETY MESSAGE ================= -->
+
+    <section class="progress-message">
+
+        <div class="progress-message-icon">
+            <i class="fa-solid fa-shield-heart"></i>
+        </div>
+
+        <div>
+
+            <h3>Remember: Online safety is a habit!</h3>
+
+            <p>
+                Stay alert, verify before you trust, never share sensitive
+                information and report suspicious activity.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            © 2026 ShieldWise — Phishing, Scam & Fraud Awareness Program
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../js/theme.js"></script>
+<script src="../js/auth.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(localStorage.getItem("shieldwise-current-user"));
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+
+    /* USER NAME */
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+
+    /* DATA */
+
+    const scamsLearned =
+        Number(currentUser.scamsLearned || 0);
+
+    const totalScams = 8;
+
+
+    const quizScore =
+        Number(currentUser.quizScore || 0);
+
+    const totalQuestions = 10;
+
+
+    const checklistCompleted =
+        Number(currentUser.checklistCompleted || 0);
+
+    const checklistTotal =
+        Number(currentUser.checklistTotal || 8);
+
+
+    /* PERCENTAGES */
+
+    const scamPercentage =
+        Math.min(
+            Math.round((scamsLearned / totalScams) * 100),
+            100
+        );
+
+
+    const quizPercentage =
+        Number(
+            currentUser.quizPercentage ||
+            Math.round((quizScore / totalQuestions) * 100)
+        );
+
+
+    const checklistPercentage =
+        checklistTotal > 0
+        ? Math.min(
+            Math.round(
+                (checklistCompleted / checklistTotal) * 100
+            ),
+            100
+        )
+        : 0;
+
+
+    /*
+       Overall Progress
+
+       Quiz       = 40%
+       Checklist  = 40%
+       Scam Learn = 20%
+    */
+
+    const overallProgress =
+        Math.round(
+            (quizPercentage * 0.40) +
+            (checklistPercentage * 0.40) +
+            (scamPercentage * 0.20)
+        );
+
+
+    /* SAFETY LEVEL */
+
+    let safetyLevel = "Beginner";
+    let levelIcon = "fa-seedling";
+
+    if (overallProgress >= 80) {
+
+        safetyLevel = "Advanced";
+        levelIcon = "fa-shield-halved";
+
+    } else if (overallProgress >= 60) {
+
+        safetyLevel = "Intermediate";
+        levelIcon = "fa-star";
+
+    }
+
+
+    /* UPDATE UI */
+
+    document.getElementById("overallPercentage")
+        .textContent = overallProgress + "%";
+
+
+    document.getElementById("scamsLearned")
+        .textContent = scamsLearned + "/" + totalScams;
+
+
+    document.getElementById("quizScore")
+        .textContent = quizScore + "/" + totalQuestions;
+
+
+    document.getElementById("checklistScore")
+        .textContent =
+        checklistCompleted + "/" + checklistTotal;
+
+
+    document.getElementById("safetyLevel")
+        .textContent = safetyLevel;
+
+
+    document.getElementById("levelBadge").innerHTML =
+        `<i class="fa-solid ${levelIcon}"></i> ${safetyLevel}`;
+
+
+    document.getElementById("scamPercent")
+        .textContent = scamPercentage + "%";
+
+
+    document.getElementById("quizPercent")
+        .textContent = quizPercentage + "%";
+
+
+    document.getElementById("checklistPercent")
+        .textContent = checklistPercentage + "%";
+
+
+    document.getElementById("scamProgress")
+        .style.width = scamPercentage + "%";
+
+
+    document.getElementById("quizProgress")
+        .style.width = quizPercentage + "%";
+
+
+    document.getElementById("checklistProgress")
+        .style.width = checklistPercentage + "%";
+
+
+    /* PROGRESS RING */
+
+    const progressRing =
+        document.getElementById("progressRing");
+
+    progressRing.style.setProperty(
+        "--progress",
+        overallProgress
+    );
+
+
+    /* TITLE */
+
+    if (overallProgress >= 90) {
+
+        document.getElementById("progressTitle")
+            .textContent = "Digital Guardian 🛡️";
+
+        document.getElementById("progressDescription")
+            .textContent =
+            "Excellent! You are building strong online safety habits.";
+
+    } else if (overallProgress >= 60) {
+
+        document.getElementById("progressTitle")
+            .textContent = "Great Progress! ⭐";
+
+        document.getElementById("progressDescription")
+            .textContent =
+            "You are becoming more aware of online threats. Keep learning!";
+
+    } else if (overallProgress > 0) {
+
+        document.getElementById("progressTitle")
+            .textContent = "Good Start! 🌱";
+
+        document.getElementById("progressDescription")
+            .textContent =
+            "Keep completing activities to improve your safety skills.";
+
+    } else {
+
+        document.getElementById("progressTitle")
+            .textContent = "Getting Started";
+
+        document.getElementById("progressDescription")
+            .textContent =
+            "Start with the Scam Library, Quiz or Safety Checklist.";
+
+    }
+
+
+    /* SAVE PROGRESS */
+
+    currentUser.progress = overallProgress;
+    currentUser.level = safetyLevel;
+
+
+    localStorage.setItem(
+        "shieldwise-current-user",
+        JSON.stringify(currentUser)
+    );
+
+
+    /* UPDATE USER IN USERS ARRAY */
+
+    const users =
+        JSON.parse(
+            localStorage.getItem("shieldwise-users")
+        ) || [];
+
+
+    const userIndex =
+        users.findIndex(
+            user => user.id === currentUser.id
+        );
+
+
+    if (userIndex !== -1) {
+
+        users[userIndex] = currentUser;
+
+        localStorage.setItem(
+            "shieldwise-users",
+            JSON.stringify(users)
+        );
+
+    }
+
+
+    /* ================= ACHIEVEMENTS ================= */
+
+    const achievements = [
+
+        {
+            title: "Welcome Shield",
+            description: "Started your ShieldWise journey.",
+            icon: "fa-shield-halved",
+            unlocked: true
+        },
+
+        {
+            title: "Quiz Starter",
+            description: "Completed the Safety Quiz.",
+            icon: "fa-circle-question",
+            unlocked: currentUser.quizCompleted === true
+        },
+
+        {
+            title: "Safety Ready",
+            description: "Completed the Safety Checklist.",
+            icon: "fa-list-check",
+            unlocked:
+                checklistTotal > 0 &&
+                checklistCompleted >= checklistTotal
+        },
+
+        {
+            title: "Scam Explorer",
+            description: "Learned about 4 or more scams.",
+            icon: "fa-book-open",
+            unlocked: scamsLearned >= 4
+        },
+
+        {
+            title: "Digital Guardian",
+            description: "Reached 80% overall progress.",
+            icon: "fa-shield-heart",
+            unlocked: overallProgress >= 80
+        },
+
+        {
+            title: "Safety Expert",
+            description: "Reached 90% overall progress.",
+            icon: "fa-trophy",
+            unlocked: overallProgress >= 90
+        }
+
+    ];
+
+
+    const achievementsGrid =
+        document.getElementById("achievementsGrid");
+
+
+    achievementsGrid.innerHTML = "";
+
+
+    achievements.forEach(function (achievement) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "achievement-card " +
+            (achievement.unlocked ? "unlocked" : "locked");
+
+
+        card.innerHTML = `
+
+            <div class="achievement-icon">
+
+                <i class="fa-solid ${achievement.icon}"></i>
+
+            </div>
+
+            <div class="achievement-content">
+
+                <h3>${achievement.title}</h3>
+
+                <p>${achievement.description}</p>
+
+                <span class="achievement-status">
+
+                    ${
+                        achievement.unlocked
+                        ? '<i class="fa-solid fa-check"></i> Unlocked'
+                        : '<i class="fa-solid fa-lock"></i> Locked'
+                    }
+
+                </span>
+
+            </div>
+
+        `;
+
+
+        achievementsGrid.appendChild(card);
+
+    });
+
+});
+
+
+/* SIDEBAR */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    sidebar.classList.toggle("show");
+
+}
+
+
+/* CLOSE SIDEBAR WHEN CLICKING OUTSIDE */
+
+document.addEventListener("click", function(event) {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
+    if (
+        window.innerWidth <= 768 &&
+        sidebar.classList.contains("show") &&
+        !sidebar.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Safety Checklist | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="manifest"
+          href="../manifest.json">
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/app.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- ================================
+     MOBILE HEADER
+================================= -->
+
+<div class="mobile-header">
+
+    <button class="menu-btn"
+            onclick="toggleSidebar()">
+        ☰
+    </button>
+
+    <div class="mobile-brand">
+        🛡️ ShieldWise
+    </div>
+
+    <button class="theme-btn"
+            onclick="toggleTheme()">
+        🌙
+    </button>
+
+</div>
+
+
+
+<!-- ================================
+     SIDEBAR
+================================= -->
+
+<aside class="sidebar"
+       id="sidebar">
+
+
+    <div class="sidebar-brand">
+
+        <div class="sidebar-logo">
+            🛡️
+        </div>
+
+        <div>
+
+            <h2>ShieldWise</h2>
+
+            <span>
+                Online Safety
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            🏠 <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html">
+            🔎 <span>Scam Detection</span>
+        </a>
+
+        <a href="scams.html">
+            ⚠️ <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html">
+            🧠 <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html"
+           class="active">
+            ✅ <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html">
+            📊 <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            📚 <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            ❓ <span>Help</span>
+        </a>
+
+        <a href="contact.html">
+            📩 <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()"
+                class="sidebar-action">
+
+            🌙 <span>Toggle Theme</span>
+
+        </button>
+
+
+        <button onclick="logout()"
+                class="sidebar-action logout-btn">
+
+            🚪 <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay"
+     onclick="toggleSidebar()">
+</div>
+
+
+
+<!-- ================================
+     MAIN
+================================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>
+                Safety Checklist ✅
+            </h1>
+
+            <p>
+                Complete these steps to improve your online safety.
+            </p>
+
+        </div>
+
+
+        <div class="user-mini">
+
+            <div class="user-avatar"
+                 id="userAvatar">
+
+                U
+
+            </div>
+
+            <div>
+
+                <strong id="userName">
+                    User
+                </strong>
+
+                <small>
+                    Stay Safe Online
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================
+         INTRO
+    ================================= -->
+
+    <section class="checklist-intro">
+
+        <div class="checklist-intro-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <h2>
+                Build Your Safety Shield
+            </h2>
+
+            <p>
+                Complete the checklist below and make your
+                everyday digital activities safer.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         PROGRESS
+    ================================= -->
+
+    <section class="checklist-progress-card">
+
+        <div class="checklist-progress-info">
+
+            <div>
+
+                <span>
+                    Your Safety Progress
+                </span>
+
+                <strong id="checklistCount">
+                    0 / 8
+                </strong>
+
+            </div>
+
+
+            <div class="checklist-percent"
+                 id="checklistPercent">
+
+                0%
+
+            </div>
+
+        </div>
+
+
+        <div class="checklist-progress-bar">
+
+            <div id="checklistProgress">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         CHECKLIST
+    ================================= -->
+
+    <section class="checklist-card">
+
+        <div class="checklist-header">
+
+            <div>
+
+                <h2>
+                    🔐 Online Safety Checklist
+                </h2>
+
+                <p>
+                    Tick each item after you have completed
+                    or understood it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="checklist-items">
+
+
+            <!-- 1 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="password">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Use strong passwords
+                    </strong>
+
+                    <small>
+                        Use long and unique passwords
+                        for important accounts.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    🔐
+                </span>
+
+            </label>
+
+
+
+            <!-- 2 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="otp">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Never share OTPs
+                    </strong>
+
+                    <small>
+                        Keep OTPs, PINs and passwords private.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    🔑
+                </span>
+
+            </label>
+
+
+
+            <!-- 3 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="links">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Check suspicious links
+                    </strong>
+
+                    <small>
+                        Verify links before opening
+                        or entering personal information.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    🔗
+                </span>
+
+            </label>
+
+
+
+            <!-- 4 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="twofactor">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Enable two-factor authentication
+                    </strong>
+
+                    <small>
+                        Use an additional security layer
+                        wherever available.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    🛡️
+                </span>
+
+            </label>
+
+
+
+            <!-- 5 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="payments">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Verify payment requests
+                    </strong>
+
+                    <small>
+                        Check the recipient and amount
+                        before approving a payment.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    💳
+                </span>
+
+            </label>
+
+
+
+            <!-- 6 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="updates">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Keep devices updated
+                    </strong>
+
+                    <small>
+                        Install trusted system and
+                        security updates regularly.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    📱
+                </span>
+
+            </label>
+
+
+
+            <!-- 7 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="downloads">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Avoid unknown downloads
+                    </strong>
+
+                    <small>
+                        Download applications and files
+                        from trusted sources.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    📥
+                </span>
+
+            </label>
+
+
+
+            <!-- 8 -->
+
+            <label class="check-item">
+
+                <input type="checkbox"
+                       class="safety-check"
+                       data-id="privacy">
+
+                <span class="custom-check">
+                </span>
+
+                <span class="check-content">
+
+                    <strong>
+                        Review privacy settings
+                    </strong>
+
+                    <small>
+                        Check who can access your
+                        personal information online.
+                    </small>
+
+                </span>
+
+                <span class="check-icon">
+                    ⚙️
+                </span>
+
+            </label>
+
+
+        </div>
+
+
+        <div class="checklist-actions">
+
+            <button class="primary-btn"
+                    onclick="completeChecklist()">
+
+                ✅ Save Progress
+
+            </button>
+
+            <button class="secondary-btn"
+                    onclick="resetChecklist()">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <div id="checklistMessage"
+             class="checklist-message hidden">
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         COMPLETE MESSAGE
+    ================================= -->
+
+    <section id="completionCard"
+             class="completion-card hidden">
+
+        <div class="completion-icon">
+            🏆
+        </div>
+
+        <h2>
+            Safety Ready! 🛡️
+        </h2>
+
+        <p>
+            Excellent! You completed your online safety checklist.
+            Keep following these habits every day.
+        </p>
+
+        <a href="dashboard.html"
+           class="primary-btn completion-btn">
+
+            🏠 Go to Dashboard
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ================================
+         SAFETY TIPS
+    ================================= -->
+
+    <section class="checklist-tips">
+
+        <h2>
+            💡 Remember
+        </h2>
+
+        <div class="tip-grid">
+
+
+            <div class="tip-card">
+
+                <div>🛑</div>
+
+                <h3>
+                    Stop
+                </h3>
+
+                <p>
+                    Pause when an unexpected message
+                    asks for money or information.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>🔎</div>
+
+                <h3>
+                    Check
+                </h3>
+
+                <p>
+                    Verify the sender, website and
+                    request independently.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>🛡️</div>
+
+                <h3>
+                    Protect
+                </h3>
+
+                <p>
+                    Keep passwords, OTPs and financial
+                    information private.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>📢</div>
+
+                <h3>
+                    Report
+                </h3>
+
+                <p>
+                    Report suspicious activity through
+                    appropriate official channels.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+================================= -->
+
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+
+
+<script>
+
+/* =================================
+   USER
+================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const currentUser =
+            JSON.parse(
+                localStorage.getItem(
+                    "shieldwise-current-user"
+                )
+            );
+
+
+        if (!currentUser) {
+
+            window.location.href =
+                "../login.html";
+
+            return;
+
+        }
+
+
+        document.getElementById(
+            "userName"
+        ).textContent =
+            currentUser.name || "User";
+
+
+        document.getElementById(
+            "userAvatar"
+        ).textContent =
+            (currentUser.name || "U")
+            .charAt(0)
+            .toUpperCase();
+
+
+        loadChecklist();
+
+    }
+);
+
+
+/* =================================
+   SIDEBAR
+================================= */
+
+function toggleSidebar() {
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("show");
+
+
+    document
+        .getElementById("sidebarOverlay")
+        .classList.toggle("show");
+
+}
+
+
+/* =================================
+   CHECKBOX LISTENERS
+================================= */
+
+document.addEventListener(
+    "change",
+    function (event) {
+
+        if (
+            event.target.classList
+                .contains("safety-check")
+        ) {
+
+            updateChecklistProgress();
+
+        }
+
+    }
+);
+
+
+/* =================================
+   LOAD CHECKLIST
+================================= */
+
+function loadChecklist() {
+
+    const saved =
+        JSON.parse(
+            localStorage.getItem(
+                "shieldwise-checklist"
+            )
+        ) || {};
+
+
+    document
+        .querySelectorAll(".safety-check")
+        .forEach(function (checkbox) {
+
+            const id =
+                checkbox.dataset.id;
+
+            checkbox.checked =
+                saved[id] === true;
+
+        });
+
+
+    updateChecklistProgress();
+
+}
+
+
+/* =================================
+   UPDATE PROGRESS
+================================= */
+
+function updateChecklistProgress() {
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".safety-check"
+        );
+
+
+    const completed =
+        document.querySelectorAll(
+            ".safety-check:checked"
+        ).length;
+
+
+    const total =
+        checkboxes.length;
+
+
+    const percentage =
+        Math.round(
+            (completed / total) * 100
+        );
+
+
+    document.getElementById(
+        "checklistCount"
+    ).textContent =
+        completed + " / " + total;
+
+
+    document.getElementById(
+        "checklistPercent"
+    ).textContent =
+        percentage + "%";
+
+
+    document.getElementById(
+        "checklistProgress"
+    ).style.width =
+        percentage + "%";
+
+
+    /* Item visual state */
+
+    checkboxes.forEach(
+        function (checkbox) {
+
+            const item =
+                checkbox.closest(
+                    ".check-item"
+                );
+
+
+            if (checkbox.checked) {
+
+                item.classList.add(
+                    "completed"
+                );
+
+            } else {
+
+                item.classList.remove(
+                    "completed"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =================================
+   SAVE CHECKLIST
+================================= */
+
+function completeChecklist() {
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".safety-check"
+        );
+
+
+    const checklist = {};
+
+
+    let completed = 0;
+
+
+    checkboxes.forEach(
+        function (checkbox) {
+
+            checklist[
+                checkbox.dataset.id
+            ] = checkbox.checked;
+
+
+            if (checkbox.checked) {
+                completed++;
+            }
+
+        }
+    );
+
+
+    localStorage.setItem(
+        "shieldwise-checklist",
+        JSON.stringify(checklist)
+    );
+
+
+    /* Update current user */
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem(
+                "shieldwise-current-user"
+            )
+        );
+
+
+    if (currentUser) {
+
+        currentUser.checklistCompleted =
+            completed;
+
+
+        currentUser.checklistTotal =
+            checkboxes.length;
+
+
+        localStorage.setItem(
+            "shieldwise-current-user",
+            JSON.stringify(currentUser)
+        );
+
+
+        updateStoredUser(currentUser);
+
+    }
+
+
+    const message =
+        document.getElementById(
+            "checklistMessage"
+        );
+
+
+    message.classList.remove(
+        "hidden"
+    );
+
+
+    if (
+        completed === checkboxes.length
+    ) {
+
+        message.className =
+            "checklist-message success";
+
+        message.textContent =
+            "🎉 Excellent! You completed all safety checks.";
+
+        document
+            .getElementById(
+                "completionCard"
+            )
+            .classList.remove(
+                "hidden"
+            );
+
+    } else {
+
+        message.className =
+            "checklist-message";
+
+        message.textContent =
+            "✅ Progress saved! " +
+            completed +
+            " of " +
+            checkboxes.length +
+            " items completed.";
+
+        document
+            .getElementById(
+                "completionCard"
+            )
+            .classList.add(
+                "hidden"
+            );
+
+    }
+
+
+    updateChecklistProgress();
+
+}
+
+
+/* =================================
+   UPDATE STORED USER
+================================= */
+
+function updateStoredUser(user) {
+
+    const users =
+        JSON.parse(
+            localStorage.getItem(
+                "shieldwise-users"
+            )
+        ) || [];
+
+
+    const index =
+        users.findIndex(
+            function (item) {
+
+                return item.id === user.id;
+
+            }
+        );
+
+
+    if (index !== -1) {
+
+        users[index] = user;
+
+
+        localStorage.setItem(
+            "shieldwise-users",
+            JSON.stringify(users)
+        );
+
+    }
+
+}
+
+
+/* =================================
+   RESET
+================================= */
+
+function resetChecklist() {
+
+    const confirmReset =
+        confirm(
+            "Are you sure you want to reset your checklist?"
+        );
+
+
+    if (!confirmReset) {
+        return;
+    }
+
+
+    document
+        .querySelectorAll(".safety-check")
+        .forEach(function (checkbox) {
+
+            checkbox.checked = false;
+
+        });
+
+
+    localStorage.removeItem(
+        "shieldwise-checklist"
+    );
+
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem(
+                "shieldwise-current-user"
+            )
+        );
+
+
+    if (currentUser) {
+
+        currentUser.checklistCompleted = 0;
+
+
+        localStorage.setItem(
+            "shieldwise-current-user",
+            JSON.stringify(currentUser)
+        );
+
+
+        updateStoredUser(currentUser);
+
+    }
+
+
+    document
+        .getElementById(
+            "checklistMessage"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+
+    document
+        .getElementById(
+            "completionCard"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+
+    updateChecklistProgress();
+
+}
+
+</script>
+
+</body>
+</html>

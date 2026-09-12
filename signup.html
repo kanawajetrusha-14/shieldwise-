@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="theme-color"
+        content="#07152f">
+
+    <title>Sign Up | ShieldWise</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/auth.js" defer></script>
+
+</head>
+
+<body class="auth-page">
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-shield">
+                🛡️
+            </div>
+
+            <span>ShieldWise</span>
+
+        </a>
+
+
+        <div class="nav-actions">
+
+            <button
+                class="theme-toggle"
+                onclick="toggleTheme()">
+                ☀️ <span>◐</span>
+            </button>
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIGNUP -->
+
+    <main class="auth-container">
+
+        <div class="auth-decoration left-decoration">
+            🔒
+        </div>
+
+        <div class="auth-decoration right-decoration">
+            👤
+        </div>
+
+
+        <div class="auth-card signup-card">
+
+            <div class="auth-brand">
+
+                <div class="auth-logo">
+                    🛡️
+                </div>
+
+                <h1>ShieldWise</h1>
+
+            </div>
+
+
+            <h2>Create Account</h2>
+
+            <p class="auth-subtitle">
+                Join us and make the internet safer!
+            </p>
+
+
+            <form id="signupForm">
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label for="signupName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('signupPassword', this)">
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔐</span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <label class="terms-check">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required>
+
+                    <span>
+                        I agree to the ShieldWise
+                        <a href="#">Terms & Conditions</a>
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="auth-submit">
+
+                    Sign Up
+
+                </button>
+
+
+                <p id="signupMessage" class="form-message"></p>
+
+            </form>
+
+
+            <p class="auth-bottom">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        🛡️ <strong>ShieldWise</strong>
+
+        <br>
+
+        Phishing Scam Online Fraud Awareness System
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Safety Quiz | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+<!-- Mobile Header -->
+
+<div class="mobile-header">
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="mobile-brand">
+        🛡️ ShieldWise
+    </div>
+
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+
+</div>
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="sidebar-logo">
+            🛡️
+        </div>
+
+        <div>
+            <h2>ShieldWise</h2>
+            <span>Online Safety</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            🏠 <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html">
+            🔎 <span>Scam Detection</span>
+        </a>
+
+        <a href="scams.html">
+            ⚠️ <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html" class="active">
+            🧠 <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html">
+            ✅ <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html">
+            📊 <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            📚 <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            ❓ <span>Help</span>
+        </a>
+
+        <a href="contact.html">
+            📩 <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+            🌙 <span>Toggle Theme</span>
+        </button>
+
+        <button onclick="logout()" class="sidebar-action logout-btn">
+            🚪 <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay"
+     onclick="toggleSidebar()">
+</div>
+
+
+<!-- Main -->
+
+<main class="dashboard-main">
+
+
+    <!-- Topbar -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>Safety Quiz 🧠</h1>
+
+            <p>
+                Test your knowledge and improve your online safety.
+            </p>
+
+        </div>
+
+
+        <div class="user-mini">
+
+            <div class="user-avatar" id="userAvatar">
+                U
+            </div>
+
+            <div>
+
+                <strong id="userName">
+                    User
+                </strong>
+
+                <small>
+                    Stay Safe Online
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Quiz Intro -->
+
+    <section class="quiz-intro">
+
+        <div class="quiz-intro-icon">
+            🧠
+        </div>
+
+        <div>
+
+            <h2>How Safe Are You Online?</h2>
+
+            <p>
+                Answer 10 questions about phishing, scams,
+                passwords, OTPs and online safety.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quiz -->
+
+    <section class="quiz-card" id="quizCard">
+
+        <!-- Progress -->
+
+        <div class="quiz-progress-header">
+
+            <span id="questionNumber">
+                Question 1 of 10
+            </span>
+
+            <span id="quizScore">
+                Score: 0
+            </span>
+
+        </div>
+
+
+        <div class="quiz-progress-bar">
+
+            <div id="quizProgress">
+            </div>
+
+        </div>
+
+
+        <!-- Question -->
+
+        <div class="question-area">
+
+            <h2 id="questionText">
+                Question will appear here
+            </h2>
+
+            <div id="optionsContainer"
+                 class="quiz-options">
+            </div>
+
+        </div>
+
+
+        <!-- Feedback -->
+
+        <div id="answerFeedback"
+             class="answer-feedback hidden">
+        </div>
+
+
+        <!-- Next -->
+
+        <button
+            id="nextButton"
+            class="quiz-next-btn"
+            onclick="nextQuestion()"
+            disabled>
+
+            Next Question →
+
+        </button>
+
+    </section>
+
+
+    <!-- Result -->
+
+    <section id="quizResult"
+             class="quiz-result hidden">
+
+        <div class="result-trophy">
+            🏆
+        </div>
+
+        <h2 id="resultTitle">
+            Quiz Completed!
+        </h2>
+
+        <p id="resultMessage">
+        </p>
+
+
+        <div class="final-score">
+
+            <span>Your Score</span>
+
+            <strong id="finalScore">
+                0 / 10
+            </strong>
+
+            <small id="finalPercentage">
+                0%
+            </small>
+
+        </div>
+
+
+        <div class="quiz-result-actions">
+
+            <button
+                class="primary-btn"
+                onclick="restartQuiz()">
+
+                🔄 Try Again
+
+            </button>
+
+            <a
+                href="dashboard.html"
+                class="secondary-btn quiz-dashboard-btn">
+
+                🏠 Dashboard
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Tips -->
+
+    <section class="quiz-tips">
+
+        <h2>🛡️ Quick Safety Reminders</h2>
+
+        <div class="tip-grid">
+
+            <div class="tip-card">
+
+                <div>🔐</div>
+
+                <h3>Protect OTPs</h3>
+
+                <p>
+                    Never share your OTP, PIN or password
+                    with anyone.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>🔗</div>
+
+                <h3>Check Links</h3>
+
+                <p>
+                    Verify website addresses before entering
+                    sensitive information.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>💰</div>
+
+                <h3>Verify Payments</h3>
+
+                <p>
+                    Check every payment request before
+                    approving it.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div>⏰</div>
+
+                <h3>Don't Rush</h3>
+
+                <p>
+                    Scammers often use urgency to make
+                    people act quickly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="../js/theme.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+
+
+<script>
+
+/* =================================
+   USER
+================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+    document.getElementById("userAvatar").textContent =
+        (currentUser.name || "U")
+        .charAt(0)
+        .toUpperCase();
+
+    startQuiz();
+
+});
+
+
+/* =================================
+   SIDEBAR
+================================= */
+
+function toggleSidebar() {
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("show");
+
+    document
+        .getElementById("sidebarOverlay")
+        .classList.toggle("show");
+
+}
+
+
+/* =================================
+   QUESTIONS
+================================= */
+
+const questions = [
+
+    {
+        question:
+            "What should you do if someone asks for your OTP?",
+
+        options: [
+            "Share it if they say they are from the bank",
+            "Never share it with anyone",
+            "Post it in a chat",
+            "Send it by email"
+        ],
+
+        answer: 1,
+
+        explanation:
+            "An OTP is confidential. Never share it with another person."
+    },
+
+
+    {
+        question:
+            "You receive a message saying your bank account will be blocked today. What should you do?",
+
+        options: [
+            "Click the link immediately",
+            "Reply with your OTP",
+            "Verify through the official bank channel",
+            "Forward it to everyone"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Scammers often create urgency. Verify directly through the official bank website or app."
+    },
+
+
+    {
+        question:
+            "Which is a common sign of a phishing message?",
+
+        options: [
+            "Unexpected login link",
+            "Normal greeting from a known contact",
+            "Official receipt you expected",
+            "Regular newsletter"
+        ],
+
+        answer: 0,
+
+        explanation:
+            "Unexpected links asking you to log in or verify information can be phishing attempts."
+    },
+
+
+    {
+        question:
+            "What should you do before scanning an unknown QR code?",
+
+        options: [
+            "Scan it immediately",
+            "Verify where it came from",
+            "Enter your UPI PIN first",
+            "Share it publicly"
+        ],
+
+        answer: 1,
+
+        explanation:
+            "Always verify an unknown QR code before scanning it."
+    },
+
+
+    {
+        question:
+            "Which information should you keep private?",
+
+        options: [
+            "Your favorite color",
+            "Your public hobby",
+            "Your OTP and password",
+            "Your favorite movie"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "OTP, passwords, PINs and similar credentials should remain private."
+    },
+
+
+    {
+        question:
+            "A person offers you a job but asks for a registration fee. What should you do?",
+
+        options: [
+            "Pay immediately",
+            "Send your bank PIN",
+            "Verify the company and job first",
+            "Give them your OTP"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Unexpected job fees are a warning sign. Research and independently verify the employer."
+    },
+
+
+    {
+        question:
+            "You receive a message saying you won a lottery you never entered. What is the safest response?",
+
+        options: [
+            "Pay the processing fee",
+            "Share your bank details",
+            "Ignore and verify independently",
+            "Send your OTP"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Unexpected lottery or prize messages are commonly used in scams."
+    },
+
+
+    {
+        question:
+            "What makes a password stronger?",
+
+        options: [
+            "Using only your name",
+            "Using 123456",
+            "Using a long and unique password",
+            "Using your birth year"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Long, unique passwords are generally stronger than simple predictable passwords."
+    },
+
+
+    {
+        question:
+            "What should you do with a suspicious email attachment?",
+
+        options: [
+            "Open it immediately",
+            "Verify the sender before opening",
+            "Forward it to friends",
+            "Disable security software"
+        ],
+
+        answer: 1,
+
+        explanation:
+            "Verify unexpected attachments before opening them."
+    },
+
+
+    {
+        question:
+            "What is the best response when an online message makes you feel pressured to act immediately?",
+
+        options: [
+            "Act without checking",
+            "Send money quickly",
+            "Stop and verify the request",
+            "Share your password"
+        ],
+
+        answer: 2,
+
+        explanation:
+            "Pause and independently verify urgent requests before taking action."
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+/* =================================
+   START QUIZ
+================================= */
+
+function startQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+
+    document
+        .getElementById("quizCard")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("quizResult")
+        .classList.add("hidden");
+
+    showQuestion();
+
+}
+
+
+/* =================================
+   SHOW QUESTION
+================================= */
+
+function showQuestion() {
+
+    answered = false;
+
+    const question =
+        questions[currentQuestion];
+
+
+    document.getElementById("questionNumber")
+        .textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    document.getElementById("quizScore")
+        .textContent =
+        "Score: " + score;
+
+
+    document.getElementById("questionText")
+        .textContent =
+        question.question;
+
+
+    document.getElementById("quizProgress")
+        .style.width =
+        (
+            (currentQuestion + 1)
+            / questions.length
+            * 100
+        ) + "%";
+
+
+    const options =
+        document.getElementById("optionsContainer");
+
+    options.innerHTML = "";
+
+
+    question.options.forEach(function(option, index) {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "quiz-option";
+
+        button.innerHTML =
+            "<span>" +
+            String.fromCharCode(65 + index) +
+            "</span>" +
+            option;
+
+        button.onclick =
+            function () {
+                selectAnswer(index);
+            };
+
+        options.appendChild(button);
+
+    });
+
+
+    document
+        .getElementById("answerFeedback")
+        .className =
+        "answer-feedback hidden";
+
+
+    const nextButton =
+        document.getElementById("nextButton");
+
+    nextButton.disabled = true;
+
+    if (currentQuestion === questions.length - 1) {
+
+        nextButton.textContent =
+            "Finish Quiz ✓";
+
+    } else {
+
+        nextButton.textContent =
+            "Next Question →";
+
+    }
+
+}
+
+
+/* =================================
+   SELECT ANSWER
+================================= */
+
+function selectAnswer(selectedIndex) {
+
+    if (answered) return;
+
+    answered = true;
+
+
+    const question =
+        questions[currentQuestion];
+
+    const buttons =
+        document.querySelectorAll(".quiz-option");
+
+    buttons.forEach(function(button, index) {
+
+        button.disabled = true;
+
+        if (index === question.answer) {
+
+            button.classList.add("correct");
+
+        }
+
+        if (
+            index === selectedIndex &&
+            selectedIndex !== question.answer
+        ) {
+
+            button.classList.add("wrong");
+
+        }
+
+    });
+
+
+    const feedback =
+        document.getElementById("answerFeedback");
+
+
+    if (selectedIndex === question.answer) {
+
+        score++;
+
+        feedback.className =
+            "answer-feedback correct-feedback";
+
+        feedback.innerHTML =
+            "✅ <strong>Correct!</strong> " +
+            question.explanation;
+
+    } else {
+
+        feedback.className =
+            "answer-feedback wrong-feedback";
+
+        feedback.innerHTML =
+            "❌ <strong>Not quite.</strong> " +
+            question.explanation;
+
+    }
+
+
+    document.getElementById("quizScore")
+        .textContent =
+        "Score: " + score;
+
+
+    document.getElementById("nextButton")
+        .disabled = false;
+
+}
+
+
+/* =================================
+   NEXT QUESTION
+================================= */
+
+function nextQuestion() {
+
+    if (!answered) return;
+
+
+    if (currentQuestion <
+        questions.length - 1) {
+
+        currentQuestion++;
+
+        showQuestion();
+
+    } else {
+
+        finishQuiz();
+
+    }
+
+}
+
+
+/* =================================
+   FINISH
+================================= */
+
+function finishQuiz() {
+
+    const percentage =
+        Math.round(
+            (score / questions.length) * 100
+        );
+
+
+    document
+        .getElementById("quizCard")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("quizResult")
+        .classList.remove("hidden");
+
+
+    document.getElementById("finalScore")
+        .textContent =
+        score + " / " + questions.length;
+
+
+    document.getElementById("finalPercentage")
+        .textContent =
+        percentage + "%";
+
+
+    let title;
+    let message;
+
+
+    if (percentage >= 80) {
+
+        title = "Excellent! 🛡️";
+
+        message =
+            "Great job! You have strong knowledge of online safety.";
+
+    }
+
+    else if (percentage >= 60) {
+
+        title = "Good Work! 👍";
+
+        message =
+            "You understand many safety concepts. Keep learning to improve.";
+
+    }
+
+    else {
+
+        title = "Keep Learning 📚";
+
+        message =
+            "Review the Scam Library and try the quiz again.";
+
+    }
+
+
+    document.getElementById("resultTitle")
+        .textContent = title;
+
+    document.getElementById("resultMessage")
+        .textContent = message;
+
+
+    /* Save Score */
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+
+    if (currentUser) {
+
+        currentUser.quizScore = score;
+
+        currentUser.quizPercentage =
+            percentage;
+
+        currentUser.quizCompleted = true;
+
+
+        localStorage.setItem(
+            "shieldwise-current-user",
+            JSON.stringify(currentUser)
+        );
+
+
+        updateStoredUser(currentUser);
+
+    }
+
+}
+
+
+/* =================================
+   SAVE USER
+================================= */
+
+function updateStoredUser(user) {
+
+    const users =
+        JSON.parse(
+            localStorage.getItem("shieldwise-users")
+        ) || [];
+
+
+    const index =
+        users.findIndex(
+            function(item) {
+                return item.id === user.id;
+            }
+        );
+
+
+    if (index !== -1) {
+
+        users[index] = user;
+
+        localStorage.setItem(
+            "shieldwise-users",
+            JSON.stringify(users)
+        );
+
+    }
+
+}
+
+
+/* =================================
+   RESTART
+================================= */
+
+function restartQuiz() {
+
+    startQuiz();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>

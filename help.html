@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Help & FAQ - ShieldWise</title>
+
+    <link rel="manifest" href="../manifest.json">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= MOBILE HEADER ================= -->
+
+<div class="mobile-header">
+
+    <div class="mobile-brand">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>ShieldWise</span>
+
+    </div>
+
+    <button onclick="toggleSidebar()" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</div>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <div>
+
+            <h2>ShieldWise</h2>
+
+            <span>Online Safety</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="detection.html">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <span>Detection</span>
+
+        </a>
+
+
+        <a href="scams.html">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>Scam Library</span>
+
+        </a>
+
+
+        <a href="quiz.html">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <span>Safety Quiz</span>
+
+        </a>
+
+
+        <a href="checklist.html">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <span>Safety Checklist</span>
+
+        </a>
+
+
+        <a href="progress.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>My Progress</span>
+
+        </a>
+
+
+        <a href="resources.html">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>Resources</span>
+
+        </a>
+
+
+        <a href="help.html" class="active">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>Help & FAQ</span>
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>Contact</span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+
+            <i class="fa-solid fa-moon"></i>
+
+            <span>Theme</span>
+
+        </button>
+
+
+        <button onclick="logout()"
+                class="sidebar-action logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>Help & FAQ 🆘</h1>
+
+            <p>
+                Find answers to common online safety questions.
+            </p>
+
+        </div>
+
+
+        <div class="user-info">
+
+            <div class="user-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="userName">User</strong>
+
+                <small>Safety Learner</small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="help-hero">
+
+        <div class="help-hero-icon">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+        </div>
+
+
+        <div>
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                ShieldWise Help Center
+
+            </span>
+
+
+            <h2>
+                How can we help you?
+            </h2>
+
+
+            <p>
+
+                Find simple answers about phishing,
+                online scams, fraud prevention and
+                digital safety.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="help-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="faqSearch"
+            placeholder="Search your question..."
+            autocomplete="off">
+
+    </section>
+
+
+    <!-- ================= QUICK HELP ================= -->
+
+    <section class="quick-help-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                Quick Help
+
+            </span>
+
+
+            <h2>
+                What do you need help with?
+            </h2>
+
+        </div>
+
+
+        <div class="quick-help-grid">
+
+
+            <button
+                class="quick-help-card"
+                onclick="filterFAQ('phishing')">
+
+                <i class="fa-solid fa-fish"></i>
+
+                <span>Phishing</span>
+
+            </button>
+
+
+            <button
+                class="quick-help-card"
+                onclick="filterFAQ('payment')">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                <span>Payment Scam</span>
+
+            </button>
+
+
+            <button
+                class="quick-help-card"
+                onclick="filterFAQ('otp')">
+
+                <i class="fa-solid fa-key"></i>
+
+                <span>OTP Safety</span>
+
+            </button>
+
+
+            <button
+                class="quick-help-card"
+                onclick="filterFAQ('account')">
+
+                <i class="fa-solid fa-user-lock"></i>
+
+                <span>Account Safety</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="faq-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-comments"></i>
+
+                Frequently Asked Questions
+
+            </span>
+
+
+            <h2>
+                Common Safety Questions
+            </h2>
+
+        </div>
+
+
+        <div class="faq-list" id="faqList">
+
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item"
+                 data-category="phishing">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-fish"></i>
+
+                        What is phishing?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Phishing is a type of online fraud where
+                        attackers pretend to be a trusted person,
+                        company or service to trick you into
+                        sharing sensitive information such as
+                        passwords, OTPs or banking details.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item"
+                 data-category="otp">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Should I share my OTP with anyone?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No. Never share your OTP with anyone.
+                        A legitimate bank or service should not
+                        ask you to disclose your OTP over a call,
+                        SMS or chat.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item"
+                 data-category="payment">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+
+                        What should I do if someone asks me
+                        to scan a QR code to receive money?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Be careful. A QR code can be used to
+                        initiate a payment rather than receive
+                        money. Verify the request and recipient
+                        before approving any payment.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item"
+                 data-category="phishing">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-link"></i>
+
+                        I clicked a suspicious link. What should
+                        I do?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Close the suspicious website immediately.
+                        Do not enter passwords, OTPs or banking
+                        information. If you entered credentials,
+                        change the affected password and enable
+                        additional security where possible.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 5 -->
+
+            <div class="faq-item"
+                 data-category="account">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-user-lock"></i>
+
+                        How can I protect my online accounts?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Use strong and unique passwords, enable
+                        two-factor authentication, keep your
+                        devices updated and avoid logging into
+                        accounts through suspicious links.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 6 -->
+
+            <div class="faq-item"
+                 data-category="payment">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-credit-card"></i>
+
+                        What should I do after a financial scam?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Contact your bank or payment service
+                        immediately and report the incident through
+                        the appropriate official cybercrime reporting
+                        channel as soon as possible.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 7 -->
+
+            <div class="faq-item"
+                 data-category="account">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Is it safe to use the same password
+                        everywhere?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        No. Reusing passwords increases your risk.
+                        If one account is compromised, attackers
+                        may try the same password on your other
+                        accounts.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 8 -->
+
+            <div class="faq-item"
+                 data-category="phishing">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        How can I identify a suspicious call?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Be cautious when a caller creates urgency,
+                        threatens account closure, asks for OTP,
+                        PIN or passwords, or requests remote access
+                        to your device.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 9 -->
+
+            <div class="faq-item"
+                 data-category="account">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Should I install an app sent by a stranger?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Avoid installing unknown applications sent
+                        through random links or messages. Use trusted
+                        official app stores and check the developer
+                        before installing an application.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 10 -->
+
+            <div class="faq-item"
+                 data-category="payment">
+
+                <button class="faq-question">
+
+                    <span>
+
+                        <i class="fa-solid fa-gift"></i>
+
+                        I received a lottery or prize message.
+                        Is it genuine?
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Unexpected prize messages can be scams.
+                        Be especially cautious if you are asked to
+                        pay a fee, share banking information or
+                        provide an OTP to claim the prize.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults" class="no-faq-results">
+
+            <i class="fa-solid fa-face-frown"></i>
+
+            <h3>No matching questions found</h3>
+
+            <p>
+                Try searching with another keyword.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY STEPS ================= -->
+
+    <section class="help-emergency">
+
+        <div class="help-emergency-header">
+
+            <div class="help-emergency-icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>If you think you have been scammed</h2>
+
+                <p>
+                    Follow these basic steps quickly.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="emergency-steps">
+
+
+            <div class="emergency-step">
+
+                <span>01</span>
+
+                <i class="fa-solid fa-hand"></i>
+
+                <h3>Stop</h3>
+
+                <p>
+                    Stop communicating with the suspected scammer.
+                </p>
+
+            </div>
+
+
+            <div class="emergency-step">
+
+                <span>02</span>
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <h3>Contact Bank</h3>
+
+                <p>
+                    Contact your bank or payment provider quickly
+                    if money is involved.
+                </p>
+
+            </div>
+
+
+            <div class="emergency-step">
+
+                <span>03</span>
+
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+
+                <h3>Report</h3>
+
+                <p>
+                    Report the incident through the appropriate
+                    official cybercrime channel.
+                </p>
+
+            </div>
+
+
+            <div class="emergency-step">
+
+                <span>04</span>
+
+                <i class="fa-solid fa-lock"></i>
+
+                <h3>Secure</h3>
+
+                <p>
+                    Change compromised passwords and secure
+                    affected accounts.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://www.cybercrime.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="help-report-btn">
+
+            Report Cyber Crime
+
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+
+            © 2026 ShieldWise — Phishing, Scam & Fraud
+            Awareness Program
+
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../js/theme.js"></script>
+
+<script src="../js/auth.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+
+    /* FAQ ACCORDION */
+
+    const questions =
+        document.querySelectorAll(".faq-question");
+
+
+    questions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item =
+                this.closest(".faq-item");
+
+
+            const alreadyOpen =
+                item.classList.contains("open");
+
+
+            document
+                .querySelectorAll(".faq-item")
+                .forEach(function (faq) {
+
+                    faq.classList.remove("open");
+
+                });
+
+
+            if (!alreadyOpen) {
+
+                item.classList.add("open");
+
+            }
+
+        });
+
+    });
+
+
+    /* SEARCH */
+
+    const searchInput =
+        document.getElementById("faqSearch");
+
+
+    searchInput.addEventListener(
+        "input",
+        searchFAQs
+    );
+
+});
+
+
+/* FAQ SEARCH */
+
+function searchFAQs() {
+
+    const searchText =
+        document
+            .getElementById("faqSearch")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const items =
+        document.querySelectorAll(".faq-item");
+
+
+    let visibleCount = 0;
+
+
+    items.forEach(function (item) {
+
+        const text =
+            item.textContent.toLowerCase();
+
+
+        if (text.includes(searchText)) {
+
+            item.style.display = "block";
+
+            visibleCount++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noResults").style.display =
+        visibleCount === 0 ? "block" : "none";
+
+}
+
+
+/* QUICK CATEGORY FILTER */
+
+function filterFAQ(category) {
+
+    document.getElementById("faqSearch").value = "";
+
+    const items =
+        document.querySelectorAll(".faq-item");
+
+
+    let visibleCount = 0;
+
+
+    items.forEach(function (item) {
+
+        if (item.dataset.category === category) {
+
+            item.style.display = "block";
+
+            visibleCount++;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noResults").style.display =
+        visibleCount === 0 ? "block" : "none";
+
+
+    document
+        .querySelector(".faq-section")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* SIDEBAR */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    sidebar.classList.toggle("show");
+
+}
+
+
+/* CLOSE SIDEBAR */
+
+document.addEventListener("click", function(event) {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
+    if (
+        window.innerWidth <= 768 &&
+        sidebar.classList.contains("show") &&
+        !sidebar.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

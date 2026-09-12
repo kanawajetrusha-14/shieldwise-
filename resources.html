@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Resources - ShieldWise</title>
+
+    <link rel="manifest" href="../manifest.json">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+<script src="../js/theme.js"></script>
+<script src="../js/app.js"></script>
+<!-- ================= MOBILE HEADER ================= -->
+
+<div class="mobile-header">
+
+    <div class="mobile-brand">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>ShieldWise</span>
+
+    </div>
+
+    <button onclick="toggleSidebar()" class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+</div>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+        </div>
+
+        <div>
+
+            <h2>ShieldWise</h2>
+
+            <span>Online Safety</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="detection.html">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <span>Detection</span>
+
+        </a>
+
+
+        <a href="scams.html">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <span>Scam Library</span>
+
+        </a>
+
+
+        <a href="quiz.html">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <span>Safety Quiz</span>
+
+        </a>
+
+
+        <a href="checklist.html">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <span>Safety Checklist</span>
+
+        </a>
+
+
+        <a href="progress.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>My Progress</span>
+
+        </a>
+
+
+        <a href="resources.html" class="active">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>Resources</span>
+
+        </a>
+
+
+        <a href="help.html">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>Help</span>
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>Contact</span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+
+            <i class="fa-solid fa-moon"></i>
+
+            <span>Theme</span>
+
+        </button>
+
+
+        <button onclick="logout()"
+                class="sidebar-action logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>Safety Resources 📚</h1>
+
+            <p>
+                Useful resources to help you stay safe online.
+            </p>
+
+        </div>
+
+
+        <div class="user-info">
+
+            <div class="user-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div>
+
+                <strong id="userName">User</strong>
+
+                <small>Safety Learner</small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="resources-hero">
+
+        <div class="resources-hero-icon">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+        </div>
+
+
+        <div>
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                Digital Safety Resources
+
+            </span>
+
+
+            <h2>
+                Learn. Protect. Report.
+            </h2>
+
+
+            <p>
+
+                Explore trusted safety information and useful
+                resources for protecting yourself from phishing,
+                scams and online fraud.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EMERGENCY ================= -->
+
+    <section class="emergency-resource">
+
+        <div class="emergency-icon">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+
+        <div class="emergency-content">
+
+            <span>URGENT HELP</span>
+
+            <h2>Suspected an online financial fraud?</h2>
+
+            <p>
+
+                If you have lost money because of an online
+                financial fraud, report it as soon as possible.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://www.cybercrime.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="emergency-btn">
+
+            Report Cyber Crime
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- ================= RESOURCE CATEGORIES ================= -->
+
+    <section class="resources-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Safety Categories
+
+            </span>
+
+
+            <h2>
+                Explore Safety Resources
+            </h2>
+
+        </div>
+
+
+        <div class="resources-grid">
+
+
+            <!-- CARD 1 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon blue">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+
+                <h3>Cyber Crime Reporting</h3>
+
+
+                <p>
+
+                    Learn how to report cybercrime and
+                    online financial fraud through the
+                    official reporting portal.
+
+                </p>
+
+
+                <a
+                    href="https://www.cybercrime.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Visit Portal
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon green">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                </div>
+
+
+                <h3>Banking Safety</h3>
+
+
+                <p>
+
+                    Follow safe banking practices and
+                    avoid sharing OTP, PIN, CVV or
+                    passwords with anyone.
+
+                </p>
+
+
+                <a
+                    href="https://www.rbi.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    RBI Website
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon purple">
+
+                    <i class="fa-solid fa-fish"></i>
+
+                </div>
+
+
+                <h3>Phishing Awareness</h3>
+
+
+                <p>
+
+                    Learn how phishing messages and
+                    fake websites try to steal personal
+                    information.
+
+                </p>
+
+
+                <a
+                    href="https://www.cisa.gov/topics/cyber-threats-and-advisories/phishing"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Learn Phishing
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- CARD 4 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon orange">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+
+                <h3>Password Safety</h3>
+
+
+                <p>
+
+                    Understand strong passwords,
+                    password managers and multi-factor
+                    authentication.
+
+                </p>
+
+
+                <a
+                    href="https://www.cisa.gov/secure-our-world/use-strong-passwords"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- CARD 5 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon cyan">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                </div>
+
+
+                <h3>Mobile Security</h3>
+
+
+                <p>
+
+                    Keep your smartphone protected by
+                    using updates, screen locks and
+                    trusted applications.
+
+                </p>
+
+
+                <a
+                    href="https://www.cisa.gov/secure-our-world"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Safety Tips
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <!-- CARD 6 -->
+
+            <article class="resource-card">
+
+                <div class="resource-icon red">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <h3>Privacy Protection</h3>
+
+
+                <p>
+
+                    Learn how to protect personal
+                    information and reduce unnecessary
+                    sharing online.
+
+                </p>
+
+
+                <a
+                    href="https://www.cisa.gov/secure-our-world"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Privacy Tips
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUICK SAFETY GUIDE ================= -->
+
+    <section class="quick-resource-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                Quick Guide
+
+            </span>
+
+
+            <h2>
+                Remember These 6 Rules
+            </h2>
+
+        </div>
+
+
+        <div class="quick-resource-grid">
+
+
+            <div class="quick-resource-card">
+
+                <span>01</span>
+
+                <i class="fa-solid fa-key"></i>
+
+                <h3>Protect Passwords</h3>
+
+                <p>
+                    Use strong and unique passwords.
+                </p>
+
+            </div>
+
+
+            <div class="quick-resource-card">
+
+                <span>02</span>
+
+                <i class="fa-solid fa-message"></i>
+
+                <h3>Never Share OTP</h3>
+
+                <p>
+                    Banks never need your OTP over a call.
+                </p>
+
+            </div>
+
+
+            <div class="quick-resource-card">
+
+                <span>03</span>
+
+                <i class="fa-solid fa-link"></i>
+
+                <h3>Check Links</h3>
+
+                <p>
+                    Verify links before opening them.
+                </p>
+
+            </div>
+
+
+            <div class="quick-resource-card">
+
+                <span>04</span>
+
+                <i class="fa-solid fa-qrcode"></i>
+
+                <h3>Verify QR Codes</h3>
+
+                <p>
+                    Scanning a QR can initiate a payment.
+                </p>
+
+            </div>
+
+
+            <div class="quick-resource-card">
+
+                <span>05</span>
+
+                <i class="fa-solid fa-download"></i>
+
+                <h3>Avoid Unknown Apps</h3>
+
+                <p>
+                    Install apps only from trusted sources.
+                </p>
+
+            </div>
+
+
+            <div class="quick-resource-card">
+
+                <span>06</span>
+
+                <i class="fa-solid fa-flag"></i>
+
+                <h3>Report Scams</h3>
+
+                <p>
+                    Report suspicious activity quickly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISCLAIMER ================= -->
+
+    <section class="resource-disclaimer">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        <div>
+
+            <h3>Important Information</h3>
+
+            <p>
+
+                ShieldWise is an educational awareness project.
+                The external websites listed here are provided
+                as useful references. Always verify information
+                through official sources before taking action.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+
+            © 2026 ShieldWise — Phishing, Scam & Fraud
+            Awareness Program
+
+        </p>
+
+    </footer>
+
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../js/theme.js"></script>
+
+<script src="../js/auth.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+});
+
+
+/* SIDEBAR */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    sidebar.classList.toggle("show");
+
+}
+
+
+/* CLOSE MOBILE SIDEBAR */
+
+document.addEventListener("click", function(event) {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
+    if (
+        window.innerWidth <= 768 &&
+        sidebar.classList.contains("show") &&
+        !sidebar.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

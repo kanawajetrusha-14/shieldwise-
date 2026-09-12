@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - ShieldWise</title>
+
+    <link rel="manifest" href="../manifest.json">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- MOBILE HEADER -->
+
+<div class="mobile-header">
+
+    <div class="mobile-brand">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>ShieldWise</span>
+    </div>
+
+    <button onclick="toggleSidebar()" class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</div>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div>
+            <h2>ShieldWise</h2>
+            <span>Online Safety</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Detection</span>
+        </a>
+
+        <a href="scams.html">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            <i class="fa-solid fa-book"></i>
+            <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Help & FAQ</span>
+        </a>
+
+        <a href="contact.html" class="active">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+            <i class="fa-solid fa-moon"></i>
+            <span>Theme</span>
+        </button>
+
+        <button onclick="logout()"
+                class="sidebar-action logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="dashboard-main">
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>Contact Us 📩</h1>
+
+            <p>
+                Have a question or feedback? We'd love to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="user-info">
+
+            <div class="user-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+
+                <strong id="userName">User</strong>
+
+                <small>Safety Learner</small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="contact-hero">
+
+        <div class="contact-hero-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+        <div>
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                ShieldWise Support
+
+            </span>
+
+            <h2>
+                We're here to help
+            </h2>
+
+            <p>
+                Send us your questions, suggestions or feedback
+                about the ShieldWise awareness program.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT CONTENT -->
+
+    <section class="contact-layout">
+
+
+        <!-- CONTACT INFO -->
+
+        <div class="contact-info-panel">
+
+            <span class="section-label">
+
+                <i class="fa-solid fa-address-card"></i>
+
+                Get In Touch
+
+            </span>
+
+            <h2>Let's connect</h2>
+
+            <p class="contact-intro">
+
+                Your feedback helps us make digital safety
+                awareness easier and more useful for everyone.
+
+            </p>
+
+
+            <div class="contact-info-item">
+
+                <div class="contact-info-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Email</h3>
+
+                    <p>support@shieldwise.example</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-info-item">
+
+                <div class="contact-info-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Availability</h3>
+
+                    <p>Monday – Friday</p>
+                    <small>10:00 AM – 5:00 PM</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-info-item">
+
+                <div class="contact-info-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Purpose</h3>
+
+                    <p>Cyber Safety Awareness</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-info-tip">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <div>
+
+                    <strong>Quick Tip</strong>
+
+                    <p>
+                        Never include your OTP, PIN, CVV or
+                        password in a support message.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form-card">
+
+            <div class="contact-form-heading">
+
+                <h2>Send us a message</h2>
+
+                <p>
+                    Fill in the form and submit your message.
+                </p>
+
+            </div>
+
+
+            <form id="contactForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="contactName">
+
+                        Full Name
+
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="contactEmail">
+
+                        Email Address
+
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="contactSubject">
+
+                        Subject
+
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                        <select id="contactSubject" required>
+
+                            <option value="">
+                                Select a subject
+                            </option>
+
+                            <option value="Feedback">
+                                Feedback
+                            </option>
+
+                            <option value="Question">
+                                General Question
+                            </option>
+
+                            <option value="Technical">
+                                Technical Issue
+                            </option>
+
+                            <option value="Suggestion">
+                                Suggestion
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="contactMessage">
+
+                        Message
+
+                    </label>
+
+                    <textarea
+                        id="contactMessage"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- WARNING -->
+
+                <div class="contact-security-note">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <span>
+                        Do not share passwords, OTPs, PINs or CVV
+                        in this form.
+                    </span>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div id="contactMessageBox"
+                     class="contact-message-box">
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="contact-submit-btn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ SHORTCUT -->
+
+    <section class="contact-help-card">
+
+        <div class="contact-help-icon">
+
+            <i class="fa-solid fa-circle-question"></i>
+
+        </div>
+
+        <div>
+
+            <h2>Looking for quick answers?</h2>
+
+            <p>
+                Check our Help & FAQ section before sending
+                a message.
+            </p>
+
+        </div>
+
+        <a href="help.html">
+
+            View FAQ
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            © 2026 ShieldWise — Phishing, Scam & Fraud
+            Awareness Program
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/theme.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/auth.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* CURRENT USER */
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+
+    /* PRE-FILL USER DETAILS */
+
+    document.getElementById("contactName").value =
+        currentUser.name || "";
+
+
+    document.getElementById("contactEmail").value =
+        currentUser.email || "";
+
+
+    /* FORM */
+
+    const form =
+        document.getElementById("contactForm");
+
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("contactName")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("contactEmail")
+                .value
+                .trim();
+
+
+        const subject =
+            document
+                .getElementById("contactSubject")
+                .value;
+
+
+        const message =
+            document
+                .getElementById("contactMessage")
+                .value
+                .trim();
+
+
+        const messageBox =
+            document.getElementById(
+                "contactMessageBox"
+            );
+
+
+        /* VALIDATION */
+
+        if (
+            name === "" ||
+            email === "" ||
+            subject === "" ||
+            message === ""
+        ) {
+
+            showContactMessage(
+                "Please fill in all fields.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (message.length < 10) {
+
+            showContactMessage(
+                "Please enter at least 10 characters in your message.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /* SAVE MESSAGE */
+
+        const messages =
+            JSON.parse(
+                localStorage.getItem("shieldwise-messages")
+            ) || [];
+
+
+        const newMessage = {
+
+            id: Date.now(),
+
+            userId: currentUser.id,
+
+            name: name,
+
+            email: email,
+
+            subject: subject,
+
+            message: message,
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        messages.push(newMessage);
+
+
+        localStorage.setItem(
+            "shieldwise-messages",
+            JSON.stringify(messages)
+        );
+
+
+        /* SUCCESS */
+
+        showContactMessage(
+            "Your message has been saved successfully!",
+            "success"
+        );
+
+
+        /* CLEAR FORM */
+
+        document.getElementById("contactSubject").value = "";
+
+        document.getElementById("contactMessage").value = "";
+
+    });
+
+
+});
+
+
+/* MESSAGE FUNCTION */
+
+function showContactMessage(text, type) {
+
+    const box =
+        document.getElementById(
+            "contactMessageBox"
+        );
+
+
+    box.className =
+        "contact-message-box " + type;
+
+
+    box.innerHTML = `
+
+        <i class="fa-solid ${
+            type === "success"
+            ? "fa-circle-check"
+            : "fa-circle-exclamation"
+        }"></i>
+
+        <span>${text}</span>
+
+    `;
+
+}
+
+
+/* SIDEBAR */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    sidebar.classList.toggle("show");
+
+}
+
+
+/* CLOSE SIDEBAR */
+
+document.addEventListener("click", function(event) {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const menuButton =
+        document.querySelector(".menu-btn");
+
+
+    if (
+        window.innerWidth <= 768 &&
+        sidebar.classList.contains("show") &&
+        !sidebar.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

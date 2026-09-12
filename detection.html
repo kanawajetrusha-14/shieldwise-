@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scam Detection | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="mobile-brand">
+        🛡️ ShieldWise
+    </div>
+
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+</div>
+
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+        <div class="sidebar-logo">🛡️</div>
+
+        <div>
+            <h2>ShieldWise</h2>
+            <span>Online Safety</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            🏠 <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html" class="active">
+            🔎 <span>Scam Detection</span>
+        </a>
+
+        <a href="scams.html">
+            ⚠️ <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html">
+            🧠 <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html">
+            ✅ <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html">
+            📊 <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            📚 <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            ❓ <span>Help</span>
+        </a>
+
+        <a href="contact.html">
+            📩 <span>Contact</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+            🌙 <span>Toggle Theme</span>
+        </button>
+
+        <button onclick="logout()" class="sidebar-action logout-btn">
+            🚪 <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+
+<!-- Main -->
+<main class="dashboard-main">
+
+    <!-- Topbar -->
+    <header class="dashboard-topbar">
+
+        <div>
+            <h1>Scam Detection 🔎</h1>
+            <p>Check suspicious messages before you take action.</p>
+        </div>
+
+        <div class="user-mini">
+
+            <div class="user-avatar" id="userAvatar">
+                U
+            </div>
+
+            <div>
+                <strong id="userName">User</strong>
+                <small>Stay Safe Online</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Detection Intro -->
+    <section class="detection-hero">
+
+        <div class="detection-icon">
+            🛡️
+        </div>
+
+        <div>
+            <h2>Is this message safe?</h2>
+
+            <p>
+                Paste a suspicious SMS, WhatsApp message, email,
+                or website URL below. ShieldWise will check common
+                phishing and scam warning signs.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Detector Card -->
+    <section class="detector-card">
+
+        <div class="detector-header">
+
+            <div>
+                <h2>🔍 Analyze Suspicious Content</h2>
+
+                <p>
+                    Do not share real passwords, OTPs, bank details,
+                    or other private information here.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Input -->
+        <div class="detector-input-area">
+
+            <label for="scamInput">
+                Paste Message or URL
+            </label>
+
+            <textarea
+                id="scamInput"
+                placeholder="Example: Your bank account will be blocked. Verify your KYC immediately by clicking this link..."
+            ></textarea>
+
+            <div class="detector-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="analyzeScam()">
+                    🔎 Analyze Now
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="clearDetector()">
+                    Clear
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Examples -->
+        <div class="example-section">
+
+            <h3>Try a Sample</h3>
+
+            <div class="example-buttons">
+
+                <button onclick="loadExample('bank')">
+                    🏦 Bank Message
+                </button>
+
+                <button onclick="loadExample('prize')">
+                    🎁 Prize Message
+                </button>
+
+                <button onclick="loadExample('safe')">
+                    🟢 Normal Message
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Result -->
+        <div id="detectionResult" class="detection-result hidden">
+
+            <div class="result-top">
+
+                <div id="resultIcon" class="result-icon">
+                    ⚠️
+                </div>
+
+                <div>
+                    <h2 id="resultTitle">
+                        Suspicious
+                    </h2>
+
+                    <p id="resultDescription">
+                        Warning signs were detected.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Risk Score -->
+            <div class="risk-score-box">
+
+                <div class="risk-score-heading">
+                    <span>Risk Score</span>
+                    <strong id="riskScore">0%</strong>
+                </div>
+
+                <div class="risk-bar">
+                    <div id="riskBar"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Warning Signs -->
+            <div class="warning-section">
+
+                <h3>⚠️ Warning Signs Detected</h3>
+
+                <ul id="warningList"></ul>
+
+            </div>
+
+
+            <!-- Advice -->
+            <div class="safety-advice">
+
+                <h3>🛡️ What Should You Do?</h3>
+
+                <p id="safetyAdvice">
+                    Do not click suspicious links or share sensitive information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Safety Tips -->
+    <section class="detection-tips">
+
+        <h2>🛡️ Remember These Safety Rules</h2>
+
+        <div class="tip-grid">
+
+            <div class="tip-card">
+                <div>🔐</div>
+                <h3>Never Share OTP</h3>
+                <p>
+                    Banks and legitimate services should never
+                    ask you to share your OTP.
+                </p>
+            </div>
+
+
+            <div class="tip-card">
+                <div>🔗</div>
+                <h3>Check Links</h3>
+                <p>
+                    Check the website address carefully before
+                    entering your login or payment details.
+                </p>
+            </div>
+
+
+            <div class="tip-card">
+                <div>⏰</div>
+                <h3>Don't Panic</h3>
+                <p>
+                    Scammers often create urgency to make you
+                    act without thinking.
+                </p>
+            </div>
+
+
+            <div class="tip-card">
+                <div>📞</div>
+                <h3>Verify First</h3>
+                <p>
+                    Contact the organization using its official
+                    website or phone number.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+
+/* Load User */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(localStorage.getItem("shieldwise-current-user"));
+
+    if (!currentUser) {
+        window.location.href = "../login.html";
+        return;
+    }
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+    document.getElementById("userAvatar").textContent =
+        (currentUser.name || "U").charAt(0).toUpperCase();
+
+});
+
+
+/* Mobile Sidebar */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const overlay =
+        document.getElementById("sidebarOverlay");
+
+    sidebar.classList.toggle("show");
+    overlay.classList.toggle("show");
+
+}
+
+
+/* Load Examples */
+
+function loadExample(type) {
+
+    const input =
+        document.getElementById("scamInput");
+
+    if (type === "bank") {
+
+        input.value =
+        "URGENT! Your bank account will be blocked today. Complete KYC verification immediately by clicking this link: http://verify-bank-account.example.com. Do not ignore this message.";
+
+    }
+
+    if (type === "prize") {
+
+        input.value =
+        "Congratulations! You have won ₹50,000 in our lucky prize. Claim your reward immediately. Send your OTP and processing fee to receive the prize.";
+
+    }
+
+    if (type === "safe") {
+
+        input.value =
+        "Your library membership has been successfully renewed. Thank you for using our service. Visit the library during working hours for any assistance.";
+
+    }
+
+}
+
+
+/* Clear */
+
+function clearDetector() {
+
+    document.getElementById("scamInput").value = "";
+
+    document
+        .getElementById("detectionResult")
+        .classList.add("hidden");
+
+}
+
+
+/* Scam Detection */
+
+function analyzeScam() {
+
+    const input =
+        document.getElementById("scamInput").value
+        .trim()
+        .toLowerCase();
+
+
+    if (!input) {
+
+        alert("Please paste a message or URL first.");
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+    let warnings = [];
+
+
+    /* OTP */
+
+    if (
+        input.includes("otp") ||
+        input.includes("one time password")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "The message mentions an OTP or one-time password."
+        );
+
+    }
+
+
+    /* Urgency */
+
+    if (
+        input.includes("urgent") ||
+        input.includes("immediately") ||
+        input.includes("act now") ||
+        input.includes("today") ||
+        input.includes("expires")
+    ) {
+
+        score += 15;
+
+        warnings.push(
+            "The message creates urgency or pressure."
+        );
+
+    }
+
+
+    /* Account Threat */
+
+    if (
+        input.includes("account blocked") ||
+        input.includes("account will be blocked") ||
+        input.includes("suspended") ||
+        input.includes("verify your account")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "It threatens account blocking or suspension."
+        );
+
+    }
+
+
+    /* Banking */
+
+    if (
+        input.includes("bank") ||
+        input.includes("kyc") ||
+        input.includes("upi") ||
+        input.includes("credit card") ||
+        input.includes("debit card")
+    ) {
+
+        score += 15;
+
+        warnings.push(
+            "Banking or financial information is involved."
+        );
+
+    }
+
+
+    /* Prize */
+
+    if (
+        input.includes("won") ||
+        input.includes("winner") ||
+        input.includes("prize") ||
+        input.includes("lottery") ||
+        input.includes("reward")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "The message contains a prize, lottery or reward claim."
+        );
+
+    }
+
+
+    /* Payment */
+
+    if (
+        input.includes("processing fee") ||
+        input.includes("send money") ||
+        input.includes("pay now") ||
+        input.includes("payment")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "It asks for money or payment."
+        );
+
+    }
+
+
+    /* Suspicious Link */
+
+    if (
+        input.includes("http://") ||
+        input.includes("https://") ||
+        input.includes("click this link") ||
+        input.includes("click here")
+    ) {
+
+        score += 15;
+
+        warnings.push(
+            "The message contains or asks you to open a link."
+        );
+
+    }
+
+
+    /* Password */
+
+    if (
+        input.includes("password") ||
+        input.includes("pin") ||
+        input.includes("cvv")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "It may be requesting sensitive authentication information."
+        );
+
+    }
+
+
+    /* Remote Access */
+
+    if (
+        input.includes("anydesk") ||
+        input.includes("teamviewer") ||
+        input.includes("remote access")
+    ) {
+
+        score += 25;
+
+        warnings.push(
+            "Remote-access software is mentioned."
+        );
+
+    }
+
+
+    /* Short URL */
+
+    if (
+        input.includes("bit.ly") ||
+        input.includes("tinyurl") ||
+        input.includes("t.co/")
+    ) {
+
+        score += 20;
+
+        warnings.push(
+            "A shortened URL is present, which can hide the destination."
+        );
+
+    }
+
+
+    /* Cap score */
+
+    if (score > 100) {
+        score = 100;
+    }
+
+
+    /*
+       If no warning signs are found,
+       keep the score low.
+    */
+
+    if (warnings.length === 0) {
+
+        score = 5;
+
+        warnings.push(
+            "No common scam indicators were detected by this basic checker."
+        );
+
+    }
+
+
+    let level;
+    let title;
+    let description;
+    let icon;
+    let advice;
+
+
+    /* Risk Classification */
+
+    if (score >= 60) {
+
+        level = "high";
+
+        title = "High Risk";
+
+        icon = "🚨";
+
+        description =
+            "Several strong scam or phishing warning signs were detected.";
+
+        advice =
+            "Do not click links, send money, share OTPs or passwords. Verify the message through an official source.";
+
+    }
+
+    else if (score >= 30) {
+
+        level = "suspicious";
+
+        title = "Suspicious";
+
+        icon = "⚠️";
+
+        description =
+            "Some suspicious patterns were detected. Be careful before taking action.";
+
+        advice =
+            "Do not respond immediately. Check the sender and verify the request using an official website or contact number.";
+
+    }
+
+    else {
+
+        level = "low";
+
+        title = "Low Risk";
+
+        icon = "🟢";
+
+        description =
+            "No major scam indicators were detected by this basic checker.";
+
+        advice =
+            "Still stay cautious. Never share passwords, OTPs or payment details with unknown people.";
+
+    }
+
+
+    /* Display Result */
+
+    const result =
+        document.getElementById("detectionResult");
+
+    result.classList.remove("hidden");
+
+    result.className =
+        "detection-result " + level;
+
+
+    document.getElementById("resultIcon").textContent =
+        icon;
+
+    document.getElementById("resultTitle").textContent =
+        title;
+
+    document.getElementById("resultDescription").textContent =
+        description;
+
+    document.getElementById("riskScore").textContent =
+        score + "%";
+
+    document.getElementById("riskBar").style.width =
+        score + "%";
+
+
+    /* Warning List */
+
+    const warningList =
+        document.getElementById("warningList");
+
+    warningList.innerHTML = "";
+
+
+    warnings.forEach(function (warning) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = warning;
+
+        warningList.appendChild(li);
+
+    });
+
+
+    document.getElementById("safetyAdvice").textContent =
+        advice;
+
+
+    /* Scroll to Result */
+
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+</script>
+
+</body>
+</html>

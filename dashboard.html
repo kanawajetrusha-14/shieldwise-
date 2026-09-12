@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07152f">
+
+    <title>Dashboard | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/app.js" defer></script>
+</head>
+
+<body class="dashboard-page">
+
+    <!-- MOBILE HEADER -->
+
+    <header class="mobile-header">
+
+        <div class="brand">
+            <div class="brand-shield">🛡️</div>
+            <span>ShieldWise</span>
+        </div>
+
+        <button
+            class="menu-btn"
+            onclick="toggleSidebar()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-shield">
+                🛡️
+            </div>
+
+            <span>ShieldWise</span>
+
+        </div>
+
+
+        <div class="sidebar-section-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link active">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="detection.html" class="sidebar-link">
+                <span>🔎</span>
+                <span>Detect Scam</span>
+            </a>
+
+            <a href="scams.html" class="sidebar-link">
+                <span>📚</span>
+                <span>Scam Library</span>
+            </a>
+
+            <a href="quiz.html" class="sidebar-link">
+                <span>🧠</span>
+                <span>Safety Quiz</span>
+            </a>
+
+            <a href="checklist.html" class="sidebar-link">
+                <span>✅</span>
+                <span>Safety Checklist</span>
+            </a>
+
+            <a href="progress.html" class="sidebar-link">
+                <span>📈</span>
+                <span>My Progress</span>
+            </a>
+
+
+            <div class="sidebar-section-title second">
+                SUPPORT
+            </div>
+
+
+            <a href="resources.html" class="sidebar-link">
+                <span>📖</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="help.html" class="sidebar-link">
+                <span>🆘</span>
+                <span>Help</span>
+            </a>
+
+            <a href="contact.html" class="sidebar-link">
+                <span>📩</span>
+                <span>Contact</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="sidebar-theme"
+                onclick="toggleTheme()">
+
+                <span>🌙</span>
+                <span>Toggle Theme</span>
+
+            </button>
+
+
+            <button
+                class="sidebar-logout"
+                onclick="logout()">
+
+                <span>🚪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <div class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    MY DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back,
+                    <span id="userName">User</span>! 👋
+                </h1>
+
+                <p class="dashboard-subtitle">
+                    Stay informed. Stay protected.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-user">
+
+                <div class="user-avatar" id="userAvatar">
+                    U
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="topUserName">
+                        User
+                    </strong>
+
+                    <small>
+                        Safety Learner
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="dashboard-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📚
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Scams Learned
+                    </span>
+
+                    <strong id="scamsLearned">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🧠
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Quiz Score
+                    </span>
+
+                    <strong id="quizScore">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Checklist
+                    </span>
+
+                    <strong id="checklistCompleted">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Safety Level
+                    </span>
+
+                    <strong id="safetyLevel">
+                        Beginner
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="dashboard-card quick-actions-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+
+                        <p>
+                            Improve your online safety skills
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="action-grid">
+
+
+                    <a
+                        href="detection.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            🔎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Detect a Scam
+                            </strong>
+
+                            <span>
+                                Check suspicious messages
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="quiz.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            🧠
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Take Quiz
+                            </strong>
+
+                            <span>
+                                Test your knowledge
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="checklist.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Safety Checklist
+                            </strong>
+
+                            <span>
+                                Build safer habits
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="scams.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Explore Scams
+                            </strong>
+
+                            <span>
+                                Learn common scam types
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="dashboard-card progress-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>Your Progress</h2>
+
+                        <p>
+                            Keep learning to become safer
+                        </p>
+
+                    </div>
+
+                    <span class="progress-percent"
+                          id="progressPercent">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-circle">
+
+                    <div class="progress-inner">
+
+                        <strong id="progressNumber">
+                            0%
+                        </strong>
+
+                        <span>
+                            Complete
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-message">
+
+                    <strong>
+                        Start your safety journey
+                    </strong>
+
+                    <p>
+                        Complete quizzes, learn scams and
+                        follow the safety checklist.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="progress.html"
+                    class="small-action-btn">
+
+                    View Full Progress →
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- SAFETY TIP -->
+
+        <section class="safety-tip">
+
+            <div class="tip-icon">
+                💡
+            </div>
+
+            <div>
+
+                <span>
+                    TODAY'S SAFETY TIP
+                </span>
+
+                <h3>
+                    Never share your OTP with anyone.
+                </h3>
+
+                <p>
+                    Banks, payment apps and legitimate
+                    companies will never ask you to share
+                    your OTP over a call or message.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT LEARNING -->
+
+        <section class="dashboard-card learning-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h2>
+                        Recommended for You
+                    </h2>
+
+                    <p>
+                        Start with these important topics
+                    </p>
+
+                </div>
+
+                <a href="scams.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="learning-list">
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        🎣
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Phishing Scams
+                        </strong>
+
+                        <p>
+                            Learn how fake messages
+                            steal personal information.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        💳
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Payment Scams
+                        </strong>
+
+                        <p>
+                            Stay safe from fake payment
+                            requests and fraud.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Online Shopping Scams
+                        </strong>
+
+                        <p>
+                            Identify fake stores and
+                            suspicious offers.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        onclick="toggleSidebar()">
+    </div>
+
+
+    <script>
+
+        /* LOAD USER */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const currentUser =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "shieldwise-current-user"
+                        )
+                    );
+
+
+                if (!currentUser) {
+
+                    window.location.href =
+                        "../login.html";
+
+                    return;
+                }
+
+
+                const firstName =
+                    currentUser.name.split(" ")[0];
+
+
+                document.getElementById(
+                    "userName"
+                ).textContent = firstName;
+
+
+                document.getElementById(
+                    "topUserName"
+                ).textContent =
+                    currentUser.name;
+
+
+                document.getElementById(
+                    "userAvatar"
+                ).textContent =
+                    firstName.charAt(0).toUpperCase();
+
+
+                document.getElementById(
+                    "scamsLearned"
+                ).textContent =
+                    currentUser.scamsLearned || 0;
+
+
+                document.getElementById(
+                    "quizScore"
+                ).textContent =
+                    (currentUser.quizScore || 0) + "%";
+
+
+                document.getElementById(
+                    "checklistCompleted"
+                ).textContent =
+                    (currentUser.checklistCompleted || 0) + "%";
+
+
+                document.getElementById(
+                    "safetyLevel"
+                ).textContent =
+                    currentUser.level || "Beginner";
+
+
+                const progress =
+                    currentUser.progress || 0;
+
+
+                document.getElementById(
+                    "progressPercent"
+                ).textContent =
+                    progress + "%";
+
+
+                document.getElementById(
+                    "progressNumber"
+                ).textContent =
+                    progress + "%";
+
+            }
+        );
+
+
+        /* MOBILE SIDEBAR */
+
+        function toggleSidebar() {
+
+            const sidebar =
+                document.getElementById("sidebar");
+
+            const overlay =
+                document.getElementById(
+                    "sidebarOverlay"
+                );
+
+
+            sidebar.classList.toggle("show");
+
+            overlay.classList.toggle("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07152f">
+
+    <title>Dashboard | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/app.js" defer></script>
+</head>
+
+<body class="dashboard-page">
+
+    <!-- MOBILE HEADER -->
+
+    <header class="mobile-header">
+
+        <div class="brand">
+            <div class="brand-shield">🛡️</div>
+            <span>ShieldWise</span>
+        </div>
+
+        <button
+            class="menu-btn"
+            onclick="toggleSidebar()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-shield">
+                🛡️
+            </div>
+
+            <span>ShieldWise</span>
+
+        </div>
+
+
+        <div class="sidebar-section-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="sidebar-link active">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="detection.html" class="sidebar-link">
+                <span>🔎</span>
+                <span>Detect Scam</span>
+            </a>
+
+            <a href="scams.html" class="sidebar-link">
+                <span>📚</span>
+                <span>Scam Library</span>
+            </a>
+
+            <a href="quiz.html" class="sidebar-link">
+                <span>🧠</span>
+                <span>Safety Quiz</span>
+            </a>
+
+            <a href="checklist.html" class="sidebar-link">
+                <span>✅</span>
+                <span>Safety Checklist</span>
+            </a>
+
+            <a href="progress.html" class="sidebar-link">
+                <span>📈</span>
+                <span>My Progress</span>
+            </a>
+
+
+            <div class="sidebar-section-title second">
+                SUPPORT
+            </div>
+
+
+            <a href="resources.html" class="sidebar-link">
+                <span>📖</span>
+                <span>Resources</span>
+            </a>
+
+            <a href="help.html" class="sidebar-link">
+                <span>🆘</span>
+                <span>Help</span>
+            </a>
+
+            <a href="contact.html" class="sidebar-link">
+                <span>📩</span>
+                <span>Contact</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="sidebar-theme"
+                onclick="toggleTheme()">
+
+                <span>🌙</span>
+                <span>Toggle Theme</span>
+
+            </button>
+
+
+            <button
+                class="sidebar-logout"
+                onclick="logout()">
+
+                <span>🚪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <div class="dashboard-topbar">
+
+            <div>
+
+                <p class="dashboard-label">
+                    MY DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome back,
+                    <span id="userName">User</span>! 👋
+                </h1>
+
+                <p class="dashboard-subtitle">
+                    Stay informed. Stay protected.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-user">
+
+                <div class="user-avatar" id="userAvatar">
+                    U
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="topUserName">
+                        User
+                    </strong>
+
+                    <small>
+                        Safety Learner
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="dashboard-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📚
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Scams Learned
+                    </span>
+
+                    <strong id="scamsLearned">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🧠
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Quiz Score
+                    </span>
+
+                    <strong id="quizScore">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Checklist
+                    </span>
+
+                    <strong id="checklistCompleted">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <span class="stat-title">
+                        Safety Level
+                    </span>
+
+                    <strong id="safetyLevel">
+                        Beginner
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="dashboard-card quick-actions-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+
+                        <p>
+                            Improve your online safety skills
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="action-grid">
+
+
+                    <a
+                        href="detection.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            🔎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Detect a Scam
+                            </strong>
+
+                            <span>
+                                Check suspicious messages
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="quiz.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            🧠
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Take Quiz
+                            </strong>
+
+                            <span>
+                                Test your knowledge
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="checklist.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            ✅
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Safety Checklist
+                            </strong>
+
+                            <span>
+                                Build safer habits
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="scams.html"
+                        class="action-card">
+
+                        <div class="action-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Explore Scams
+                            </strong>
+
+                            <span>
+                                Learn common scam types
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="dashboard-card progress-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h2>Your Progress</h2>
+
+                        <p>
+                            Keep learning to become safer
+                        </p>
+
+                    </div>
+
+                    <span class="progress-percent"
+                          id="progressPercent">
+                        0%
+                    </span>
+
+                </div>
+
+
+                <div class="progress-circle">
+
+                    <div class="progress-inner">
+
+                        <strong id="progressNumber">
+                            0%
+                        </strong>
+
+                        <span>
+                            Complete
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-message">
+
+                    <strong>
+                        Start your safety journey
+                    </strong>
+
+                    <p>
+                        Complete quizzes, learn scams and
+                        follow the safety checklist.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="progress.html"
+                    class="small-action-btn">
+
+                    View Full Progress →
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- SAFETY TIP -->
+
+        <section class="safety-tip">
+
+            <div class="tip-icon">
+                💡
+            </div>
+
+            <div>
+
+                <span>
+                    TODAY'S SAFETY TIP
+                </span>
+
+                <h3>
+                    Never share your OTP with anyone.
+                </h3>
+
+                <p>
+                    Banks, payment apps and legitimate
+                    companies will never ask you to share
+                    your OTP over a call or message.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT LEARNING -->
+
+        <section class="dashboard-card learning-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h2>
+                        Recommended for You
+                    </h2>
+
+                    <p>
+                        Start with these important topics
+                    </p>
+
+                </div>
+
+                <a href="scams.html">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="learning-list">
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        🎣
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Phishing Scams
+                        </strong>
+
+                        <p>
+                            Learn how fake messages
+                            steal personal information.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        💳
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Payment Scams
+                        </strong>
+
+                        <p>
+                            Stay safe from fake payment
+                            requests and fraud.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="scams.html"
+                    class="learning-item">
+
+                    <div class="learning-icon">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Online Shopping Scams
+                        </strong>
+
+                        <p>
+                            Identify fake stores and
+                            suspicious offers.
+                        </p>
+
+                    </div>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        onclick="toggleSidebar()">
+    </div>
+
+
+    <script>
+
+        /* LOAD USER */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const currentUser =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "shieldwise-current-user"
+                        )
+                    );
+
+
+                if (!currentUser) {
+
+                    window.location.href =
+                        "../login.html";
+
+                    return;
+                }
+
+
+                const firstName =
+                    currentUser.name.split(" ")[0];
+
+
+                document.getElementById(
+                    "userName"
+                ).textContent = firstName;
+
+
+                document.getElementById(
+                    "topUserName"
+                ).textContent =
+                    currentUser.name;
+
+
+                document.getElementById(
+                    "userAvatar"
+                ).textContent =
+                    firstName.charAt(0).toUpperCase();
+
+
+                document.getElementById(
+                    "scamsLearned"
+                ).textContent =
+                    currentUser.scamsLearned || 0;
+
+
+                document.getElementById(
+                    "quizScore"
+                ).textContent =
+                    (currentUser.quizScore || 0) + "%";
+
+
+                document.getElementById(
+                    "checklistCompleted"
+                ).textContent =
+                    (currentUser.checklistCompleted || 0) + "%";
+
+
+                document.getElementById(
+                    "safetyLevel"
+                ).textContent =
+                    currentUser.level || "Beginner";
+
+
+                const progress =
+                    currentUser.progress || 0;
+
+
+                document.getElementById(
+                    "progressPercent"
+                ).textContent =
+                    progress + "%";
+
+
+                document.getElementById(
+                    "progressNumber"
+                ).textContent =
+                    progress + "%";
+
+            }
+        );
+
+
+        /* MOBILE SIDEBAR */
+
+        function toggleSidebar() {
+
+            const sidebar =
+                document.getElementById("sidebar");
+
+            const overlay =
+                document.getElementById(
+                    "sidebarOverlay"
+                );
+
+
+            sidebar.classList.toggle("show");
+
+            overlay.classList.toggle("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

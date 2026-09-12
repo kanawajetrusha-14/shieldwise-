@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scam Library | ShieldWise</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+<!-- Mobile Header -->
+
+<div class="mobile-header">
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="mobile-brand">
+        🛡️ ShieldWise
+    </div>
+
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+
+</div>
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="sidebar-logo">
+            🛡️
+        </div>
+
+        <div>
+            <h2>ShieldWise</h2>
+            <span>Online Safety</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+            🏠 <span>Dashboard</span>
+        </a>
+
+        <a href="detection.html">
+            🔎 <span>Scam Detection</span>
+        </a>
+
+        <a href="scams.html" class="active">
+            ⚠️ <span>Scam Library</span>
+        </a>
+
+        <a href="quiz.html">
+            🧠 <span>Safety Quiz</span>
+        </a>
+
+        <a href="checklist.html">
+            ✅ <span>Safety Checklist</span>
+        </a>
+
+        <a href="progress.html">
+            📊 <span>My Progress</span>
+        </a>
+
+        <a href="resources.html">
+            📚 <span>Resources</span>
+        </a>
+
+        <a href="help.html">
+            ❓ <span>Help</span>
+        </a>
+
+        <a href="contact.html">
+            📩 <span>Contact</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button onclick="toggleTheme()" class="sidebar-action">
+            🌙 <span>Toggle Theme</span>
+        </button>
+
+        <button onclick="logout()" class="sidebar-action logout-btn">
+            🚪 <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay"
+     id="sidebarOverlay"
+     onclick="toggleSidebar()">
+</div>
+
+
+<!-- Main -->
+
+<main class="dashboard-main">
+
+
+    <!-- Topbar -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <h1>Scam Library ⚠️</h1>
+
+            <p>
+                Learn about common online scams and how to stay protected.
+            </p>
+
+        </div>
+
+
+        <div class="user-mini">
+
+            <div class="user-avatar" id="userAvatar">
+                U
+            </div>
+
+            <div>
+
+                <strong id="userName">
+                    User
+                </strong>
+
+                <small>
+                    Stay Safe Online
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Intro -->
+
+    <section class="library-intro">
+
+        <div class="library-intro-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <h2>Know the Scam. Stop the Scam.</h2>
+
+            <p>
+                Scammers use different techniques to trick people
+                into sharing money, passwords or personal information.
+                Learn the common warning signs before you respond.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Search -->
+
+    <section class="scam-search">
+
+        <div>
+
+            <label for="scamSearch">
+                Search Scam Type
+            </label>
+
+            <input
+                type="text"
+                id="scamSearch"
+                placeholder="Search e.g. UPI, OTP, Job, KYC..."
+                onkeyup="searchScams()"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- Scam Cards -->
+
+    <section class="scam-library">
+
+        <div class="scam-grid" id="scamGrid">
+
+
+            <!-- UPI -->
+
+            <article class="scam-card"
+                     data-name="upi payment scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        💳
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>UPI Payment Scam</h3>
+
+                <p>
+                    Scammers may pretend to send or receive money
+                    and trick users into approving a payment request.
+                </p>
+
+                <button onclick="showScamDetails('upi')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- OTP -->
+
+            <article class="scam-card"
+                     data-name="otp scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        🔐
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>OTP Scam</h3>
+
+                <p>
+                    A scammer may pretend to be from a bank or
+                    company and ask you to reveal an OTP.
+                </p>
+
+                <button onclick="showScamDetails('otp')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- Phishing -->
+
+            <article class="scam-card"
+                     data-name="phishing email link">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        🎣
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>Phishing</h3>
+
+                <p>
+                    Fake emails, messages or websites are used
+                    to steal login credentials or personal information.
+                </p>
+
+                <button onclick="showScamDetails('phishing')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- Job -->
+
+            <article class="scam-card"
+                     data-name="job employment work from home scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        💼
+                    </div>
+
+                    <span class="risk-badge medium">
+                        Medium Risk
+                    </span>
+
+                </div>
+
+                <h3>Job Scam</h3>
+
+                <p>
+                    Fake recruiters may promise attractive jobs
+                    and ask for registration or processing fees.
+                </p>
+
+                <button onclick="showScamDetails('job')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- KYC -->
+
+            <article class="scam-card"
+                     data-name="kyc bank verification scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        🏦
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>KYC Scam</h3>
+
+                <p>
+                    Fraudsters may claim that your KYC has expired
+                    and ask you to click a link or share information.
+                </p>
+
+                <button onclick="showScamDetails('kyc')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- Lottery -->
+
+            <article class="scam-card"
+                     data-name="lottery prize reward scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        🎁
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>Lottery & Prize Scam</h3>
+
+                <p>
+                    You receive a message claiming that you have
+                    won money or a prize that you never entered for.
+                </p>
+
+                <button onclick="showScamDetails('lottery')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- QR -->
+
+            <article class="scam-card"
+                     data-name="qr code scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        📱
+                    </div>
+
+                    <span class="risk-badge high">
+                        High Risk
+                    </span>
+
+                </div>
+
+                <h3>QR Code Scam</h3>
+
+                <p>
+                    A QR code may redirect you to a payment request
+                    or a fake website designed to steal information.
+                </p>
+
+                <button onclick="showScamDetails('qr')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+            <!-- Social Media -->
+
+            <article class="scam-card"
+                     data-name="social media instagram facebook account scam">
+
+                <div class="scam-card-top">
+
+                    <div class="scam-icon">
+                        📲
+                    </div>
+
+                    <span class="risk-badge medium">
+                        Medium Risk
+                    </span>
+
+                </div>
+
+                <h3>Social Media Scam</h3>
+
+                <p>
+                    Fake profiles, hacked accounts and fraudulent
+                    offers can be used to trick social media users.
+                </p>
+
+                <button onclick="showScamDetails('social')">
+                    Learn More →
+                </button>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- No Result -->
+
+        <div id="noScamResult"
+             class="no-scam-result hidden">
+
+            <div>🔍</div>
+
+            <h3>No scam found</h3>
+
+            <p>
+                Try another search term such as OTP, UPI,
+                phishing or job.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- General Safety -->
+
+    <section class="library-safety">
+
+        <h2>🛡️ Golden Rules of Online Safety</h2>
+
+        <div class="golden-rules">
+
+            <div>
+                <span>01</span>
+                <strong>Never share OTP</strong>
+                <p>
+                    Keep OTPs and passwords private.
+                </p>
+            </div>
+
+            <div>
+                <span>02</span>
+                <strong>Verify before paying</strong>
+                <p>
+                    Check payment requests carefully.
+                </p>
+            </div>
+
+            <div>
+                <span>03</span>
+                <strong>Don't trust urgency</strong>
+                <p>
+                    Take time to verify unexpected requests.
+                </p>
+            </div>
+
+            <div>
+                <span>04</span>
+                <strong>Check website addresses</strong>
+                <p>
+                    Look carefully before entering information.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Details Modal -->
+
+<div class="scam-modal hidden" id="scamModal">
+
+    <div class="scam-modal-content">
+
+        <button class="modal-close"
+                onclick="closeScamDetails()">
+            ×
+        </button>
+
+        <div id="modalIcon"
+             class="modal-icon">
+            ⚠️
+        </div>
+
+        <h2 id="modalTitle">
+            Scam
+        </h2>
+
+        <p id="modalDescription">
+        </p>
+
+        <div class="modal-section">
+
+            <h3>🚩 Common Warning Signs</h3>
+
+            <ul id="modalWarning">
+            </ul>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>🛡️ How to Stay Safe</h3>
+
+            <ul id="modalSafety">
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/theme.js"></script>
+
+<script>
+
+/* ================================
+   USER
+================================ */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentUser =
+        JSON.parse(
+            localStorage.getItem("shieldwise-current-user")
+        );
+
+    if (!currentUser) {
+
+        window.location.href = "../login.html";
+
+        return;
+
+    }
+
+    document.getElementById("userName").textContent =
+        currentUser.name || "User";
+
+    document.getElementById("userAvatar").textContent =
+        (currentUser.name || "U")
+        .charAt(0)
+        .toUpperCase();
+
+});
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+function toggleSidebar() {
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("show");
+
+    document
+        .getElementById("sidebarOverlay")
+        .classList.toggle("show");
+
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+function searchScams() {
+
+    const search =
+        document
+        .getElementById("scamSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards =
+        document.querySelectorAll(".scam-card");
+
+    let found = false;
+
+
+    cards.forEach(function(card) {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+            card.style.display = "";
+
+            found = true;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    document
+        .getElementById("noScamResult")
+        .classList.toggle("hidden", found);
+
+}
+
+
+/* ================================
+   SCAM INFORMATION
+================================ */
+
+const scamInformation = {
+
+    upi: {
+
+        icon: "💳",
+
+        title: "UPI Payment Scam",
+
+        description:
+            "Fraudsters may use fake payment requests, refund stories or impersonation to trick users into approving a UPI transaction.",
+
+        warnings: [
+            "Unexpected payment request",
+            "Pressure to approve a transaction",
+            "Someone claiming to send money asks you to enter your UPI PIN",
+            "Unknown person asks you to scan a QR code"
+        ],
+
+        safety: [
+            "Never enter your UPI PIN to receive money",
+            "Verify the receiver before approving a payment",
+            "Do not scan unknown QR codes",
+            "Contact your bank if you notice an unauthorized transaction"
+        ]
+
+    },
+
+
+    otp: {
+
+        icon: "🔐",
+
+        title: "OTP Scam",
+
+        description:
+            "Scammers may impersonate banks, delivery companies or service providers and ask for an OTP.",
+
+        warnings: [
+            "Unexpected OTP request",
+            "Caller asks you to read an OTP",
+            "Threats about account suspension",
+            "Unknown person claiming to be customer support"
+        ],
+
+        safety: [
+            "Never share an OTP with anyone",
+            "Do not provide passwords or PINs",
+            "End suspicious calls",
+            "Contact the organization through its official channel"
+        ]
+
+    },
+
+
+    phishing: {
+
+        icon: "🎣",
+
+        title: "Phishing",
+
+        description:
+            "Phishing uses fake messages and websites to trick users into revealing passwords, financial information or other sensitive data.",
+
+        warnings: [
+            "Unexpected login link",
+            "Fake-looking website address",
+            "Urgent request to verify an account",
+            "Message asks for sensitive information"
+        ],
+
+        safety: [
+            "Do not click unexpected links",
+            "Type the official website address yourself",
+            "Check the sender carefully",
+            "Use multi-factor authentication where available"
+        ]
+
+    },
+
+
+    job: {
+
+        icon: "💼",
+
+        title: "Job Scam",
+
+        description:
+            "Fake job offers may promise easy work and high income while asking applicants for money or personal information.",
+
+        warnings: [
+            "Guaranteed high salary for little work",
+            "Request for registration fee",
+            "Pressure to pay immediately",
+            "Recruiter uses unofficial communication channels"
+        ],
+
+        safety: [
+            "Research the company independently",
+            "Never pay money just to get a job",
+            "Verify the recruiter",
+            "Do not share unnecessary personal documents"
+        ]
+
+    },
+
+
+    kyc: {
+
+        icon: "🏦",
+
+        title: "KYC Scam",
+
+        description:
+            "Fraudsters may claim that your KYC needs immediate verification and send a fake link.",
+
+        warnings: [
+            "Urgent KYC update request",
+            "Threat of account blocking",
+            "Unknown verification link",
+            "Request for banking information"
+        ],
+
+        safety: [
+            "Use the official bank application or website",
+            "Never share OTP or PIN",
+            "Do not install unknown applications",
+            "Contact your bank directly"
+        ]
+
+    },
+
+
+    lottery: {
+
+        icon: "🎁",
+
+        title: "Lottery & Prize Scam",
+
+        description:
+            "A scammer claims that you have won a prize or lottery even though you did not participate.",
+
+        warnings: [
+            "Unexpected prize announcement",
+            "Request for processing fee",
+            "Request for OTP or banking information",
+            "Pressure to claim the prize quickly"
+        ],
+
+        safety: [
+            "Do not pay a fee to claim an unexpected prize",
+            "Do not share OTPs",
+            "Verify the organization independently",
+            "Ignore suspicious prize messages"
+        ]
+
+    },
+
+
+    qr: {
+
+        icon: "📱",
+
+        title: "QR Code Scam",
+
+        description:
+            "Fraudsters may use QR codes to redirect users to unwanted payment requests or fake websites.",
+
+        warnings: [
+            "Unknown QR code",
+            "Unexpected payment request",
+            "QR code sent by an unknown person",
+            "Instructions to enter UPI PIN after scanning"
+        ],
+
+        safety: [
+            "Only scan trusted QR codes",
+            "Remember that receiving money does not require your UPI PIN",
+            "Check the payment screen before confirming",
+            "Cancel suspicious transactions"
+        ]
+
+    },
+
+
+    social: {
+
+        icon: "📲",
+
+        title: "Social Media Scam",
+
+        description:
+            "Fake profiles, impersonation and fraudulent offers can be used to trick users on social media platforms.",
+
+        warnings: [
+            "New account pretending to be someone you know",
+            "Unexpected money request",
+            "Suspicious investment or giveaway",
+            "Request to move conversation to another platform"
+        ],
+
+        safety: [
+            "Verify the person's identity independently",
+            "Do not send money based only on a social media message",
+            "Use privacy and security settings",
+            "Report suspicious accounts"
+        ]
+
+    }
+
+};
+
+
+/* ================================
+   MODAL
+================================ */
+
+function showScamDetails(type) {
+
+    const data =
+        scamInformation[type];
+
+    if (!data) return;
+
+
+    document.getElementById("modalIcon").textContent =
+        data.icon;
+
+    document.getElementById("modalTitle").textContent =
+        data.title;
+
+    document.getElementById("modalDescription").textContent =
+        data.description;
+
+
+    const warning =
+        document.getElementById("modalWarning");
+
+    warning.innerHTML = "";
+
+    data.warnings.forEach(function(item) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        warning.appendChild(li);
+
+    });
+
+
+    const safety =
+        document.getElementById("modalSafety");
+
+    safety.innerHTML = "";
+
+    data.safety.forEach(function(item) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        safety.appendChild(li);
+
+    });
+
+
+    document
+        .getElementById("scamModal")
+        .classList.remove("hidden");
+
+}
+
+
+function closeScamDetails() {
+
+    document
+        .getElementById("scamModal")
+        .classList.add("hidden");
+
+}
+
+
+/* Close when clicking outside */
+
+document.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("scamModal");
+
+    if (
+        event.target === modal
+    ) {
+
+        closeScamDetails();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
